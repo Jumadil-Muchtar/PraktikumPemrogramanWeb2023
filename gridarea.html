@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 2</title>
+    <style>
+        /* style.css */
+        .container{
+            width: 600px;
+            margin: 50px auto;
+            padding: 40px 0;
+            display: grid;
+            background-color: blueviolet;
+            grid-template-areas: 
+            'header header header'
+            'sidebar content content'
+            'footer footer footer'
+            ;
+            grid-gap: 50px;
+        }
+        .header{
+            height: 40px;
+            grid-area: header;
+            background-color: aqua;
+        }
+        .sidebar{
+            height: 60px;
+            grid-area : sidebar;
+            background-color: red;
+        }
+        .content{
+            height: 60px;
+            grid-area: content;
+            background-color: green;
+        }
+        .footer{
+            height: 30px;
+            grid-area: footer;
+            background-color: yellow;
+        }
+        
+
+        
+    </style>
+    
+</head>
+<body>
+<!-- grid.html -->
+<div class="container">
+    <div class="header">Header</div>
+    <div class="sidebar">Sidebar</div>
+    <div class="content">Content</div>
+    <div class="footer">Footer</div>
+</div>
+</body>
+</html>

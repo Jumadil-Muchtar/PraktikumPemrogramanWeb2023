@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+    <style>
+        div.kotak-besar{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+        div.kotak-kecil{
+            width: 60px;
+            height: 60px;
+            background-color: aquamarine;
+        }
+        .statis-child{
+            position: static;
+            top: 20px;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+        .relative-child{
+            position: relative;
+            top: 20px;
+            bottom: 0;
+            right: 0;
+            left: 20px;
+        }
+        .absolute-child{
+            position: absolute;
+            top: 20px;
+            bottom: 0;
+            right: 0;
+            left: 20px;
+        }
+        .fixed-child{
+            position: fixed;
+            top: 20px;
+            bottom: 0;
+            right: 0;
+            left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Position Static (Default)</h1>
+    <div class="kotak-besar statis-container">
+        <div class="kotak-kecil statis-child">Kotak Kecil</div>
+    </div>
+     
+    <h1>Position Relative</h1>
+    <div class="kotak-besar relative-container">
+        <div class="kotak-kecil relative-child">Kotak Kecil</div>
+    </div>
+
+    <h1>Position Absolute</h1>
+    <div class="kotak-besar absolute-container">
+        <div class="kotak-kecil absolute-child">Kotak Kecil</div>
+    </div>
+
+    <!-- <h1>Position Fixed</h1>
+    <div class="kotak-besar fixed-container">
+        <div class="kotak-kecil fixed-child">Kotak Kecil</div>
+    </div> -->
+
+
+
+
+    
+</body>
+</html>

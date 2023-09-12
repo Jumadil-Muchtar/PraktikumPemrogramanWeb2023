@@ -1,0 +1,10 @@
+body{
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 50px ;
+    border: 1px solid black;
+}
+span.press{
+    font-weight: bold;
+    color: palevioletred;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query</title>
+    <style>
+        .kontainer{
+            border: 1px solid black;
+        }
+
+        @media (min-width: 600px) {
+            .kotak1{
+                display: inline-block;
+                width: 300px;
+                height:200px;
+                background-color: aquamarine;
+            }
+            .kotak2{
+                display: inline-block;
+                width: 300px;
+                height: 200px;
+                background-color: aqua;
+            }
+
+        }
+        @media (max-width: 600px) {
+            .kotak1{
+                display: inline-block;
+                width: 90%;
+                height:200px;
+                background-color: aquamarine;
+                }
+            .kotak2{
+                display: inline-block;
+                width: 90%;
+                height: 200px;
+                background-color: aqua;
+            }
+
+        }
+    </style>
+</head>
+<body>
+
+    <div class="kontainer">
+        <div class="kotak1">Ini kotak 1</div>
+        <div class="kotak2">Ini kotak 2</div>
+    </div>
+    
+</body>
+</html>

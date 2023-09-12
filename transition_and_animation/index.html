@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+div.animation {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+
+}
+
+@keyframes example {
+  from {background-color: red;}
+  to {background-color: yellow;}
+}
+
+a{
+    color: blue;
+}
+a:hover {
+    transition: red 0.3s ease;
+}
+
+div.transition {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s;
+}
+
+div.transition:hover {
+  width: 300px;
+}
+
+</style>
+</head>
+<body>
+
+<h1>CSS Transition</h1>
+
+<p>Hover over the div element below, to see the transition effect:</p>
+
+
+<div class="transition"></div>
+
+
+<h1>CSS Animation</h1>
+
+<div class="animation"></div>
+
+<p><b>Note:</b> When an animation is finished, it goes back to its original style.</p>
+
+</body>
+</html>

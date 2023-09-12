@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 2</title>
+    <style>
+        /* style.css */
+        .container{
+            width: 600px;
+            margin: 50px auto;
+            padding: 40px 0;
+            display: grid;
+            gap: 20px;
+            background-color: blueviolet;
+        }
+        .header{
+            height: 40px;
+            grid-column-start: 1;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 2;
+
+            background-color: aqua;
+        }
+        .sidebar{
+            height: 60px;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 2;
+            grid-row-end: 3;
+            background-color: red;
+        }
+        .content{
+            height: 60px;
+            grid-column-start: 2;
+            grid-column-end: 4;
+            grid-row-start: 2;
+            grid-row-end: 3;
+            background-color: green;
+        }
+        .footer{
+            height: 30px;
+            grid-column-start: 1;
+            grid-column-end: 4;
+            grid-row-start: 3;
+            grid-row-end: 4;
+            background-color: yellow;
+        }
+    </style>
+    
+</head>
+<body>
+   <div class="container">
+    <div class="header">Header</div>
+    <div class="sidebar">Sidebar</div>
+    <div class="content">Content</div>
+    <div class="footer">Footer</div>
+   </div>
+    
+</body>
+</html>
