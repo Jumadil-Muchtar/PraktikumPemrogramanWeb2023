@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Element</title>
     <style>
+        body{
+            /* padding: 0; */
+            margin-left: 0;
+        }
         p {
             color: blue;
             font-size: 16px;
@@ -14,11 +18,48 @@
             color: green;
             text-align: center;
         }
+        h1.title{
+            background-color:  darkgoldenrod;
+        }
+        p.content{
+            background-color: aquamarine;
+        }
+        p#id1{
+            background-color: blue;
+        }
+
+
+        /* tag 1 */
+        /* class 10 */
+        /* id 100 */
+        /* style 1000 */
+
+        ul li.content{
+            color: blueviolet;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            margin: 50px;
+            padding: 5px;
+            border: 2px dotted black;
+            background-color: brown;
+        }
+
     </style>
 </head>
 <body>
-    <h1>Judul</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere sed architecto tempore voluptates porro, possimus asperiores distinctio officiis, laudantium quidem recusandae quis obcaecati tenetur sapiente accusantium autem! Quisquam, rerum quia.</p>
-    
+    <h1 class="title">Judul</h1>
+    <p class="content" id="id1" style="background-color: brown;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere sed architecto tempore voluptates porro, possimus asperiores distinctio officiis, laudantium quidem recusandae quis obcaecati tenetur sapiente accusantium autem! Quisquam, rerum quia.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, deleniti?</p>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li class="content">3</li>
+    </ul>
+
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate odit eaque explicabo voluptatum vitae, laborum sequi repellat veniam ut doloribus.</p>
+    </div>
 </body>
 </html>

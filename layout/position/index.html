@@ -29,20 +29,15 @@
             right: 0;
             left: 20px;
         }
-        .absolute-child{
-            position: absolute;
-            top: 20px;
-            bottom: 0;
-            right: 0;
-            left: 20px;
-        }
-        .fixed-child{
+        div.top-bar{
             position: fixed;
-            top: 20px;
-            bottom: 0;
+            top: 0;
             right: 0;
-            left: 20px;
+            left:0;
+            padding: 20px;
+            background-color: aqua;
         }
+        
     </style>
 </head>
 <body>
@@ -61,14 +56,8 @@
         <div class="kotak-kecil absolute-child">Kotak Kecil</div>
     </div>
 
-    <!-- <h1>Position Fixed</h1>
-    <div class="kotak-besar fixed-container">
-        <div class="kotak-kecil fixed-child">Kotak Kecil</div>
-    </div> -->
-
-
-
-
+    <h1>Position Fixed</h1>
+    <div class="top-bar">Top Bar</div>
     
 </body>
 </html>
