@@ -13,6 +13,7 @@ Untuk pengumpulan tugas praktikum, silahkan ikuti langkah berikut.
 8. Setelah itu, lakukan pull request kepada repositori ini.
 
   Format penulisan commit saat Pull Request:
-a. Pada saat menulis Commit, judul commit berisi dengan kegiatan yang dilakukan. Misalnya "Mengumpulkan Tugas Praktikum-1", "Merevisi Tugas Praktikum-1",
-b. Deskripsi commit harus menyertakan nim dan nama. Khusus untuk kegiatan merevisi tugas praktikum, silahkan jelaskan bagian kode yang Anda revisi. Misal "Bagian yang direvisi yaitu: Biodata. Pada biodata saya telah melakukan perubahan yang sebelumnya hanya menggunakan tag div, saya ganti menjadi tag table untuk memperbaiki tampilan biodata saya".
+  
+1. Pada saat menulis Commit, judul commit berisi dengan kegiatan yang dilakukan. Misalnya "Mengumpulkan Tugas Praktikum-1", "Merevisi Tugas Praktikum-1".
+2. Deskripsi commit harus menyertakan nim dan nama. Khusus untuk kegiatan merevisi tugas praktikum, silahkan jelaskan bagian kode yang Anda revisi. Misal "Bagian yang direvisi yaitu: Biodata. Pada biodata saya telah melakukan perubahan yang sebelumnya hanya menggunakan tag div, saya ganti menjadi tag table untuk memperbaiki tampilan biodata saya".
 
