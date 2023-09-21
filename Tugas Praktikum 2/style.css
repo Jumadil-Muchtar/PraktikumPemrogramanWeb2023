@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* flex:  utk mengatur layout elemen, ubah tinggi lebar, posisi dan jarak elemen, dsb
+    flexdir: mengatur arah elemen dalam container, brdsrkn kolom jdi kebawah
+    justcont: mengatur posisi elemen scr horizontal
+    alignitems: mengatur posisi elemen scr vertikal*/
+}
+
+nav {
+    background-color: rgb(255, 127, 80);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    z-index: 1;
+    /* z index utk mengatur urutan tumpukan elemen
+    karna yg pake z index cuma nav jdi nav yg paling depan */
+}
+a {
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+    text-align: center;
+    width: 100px;
+    transition: all .15s;
+}
+a:hover {
+    background-color: rgb(211, 105, 30);
+    /* mengatur bg color elemen a saat sdg dihover, ketika kursor diatas link */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+p {
+    max-width: 800px;
+    padding: 40px 20px 15px 20px; 
+    /* padding-bottom: 15px; */
+    text-align: justify;
+    line-height: 20px;
+    
+}
+
+.galeri-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+    padding: 5px 70px;
+
+    /* grid: utk mengatur elemen menggunakan tata letak grid jdi diatur dlm baris dan kolom
+    grid t-colm: utk mengatur jmlh dan lebar kolom dlm grid, jdi ada 3 kolom dgn lebar yg sama, mengulangi 1 fraksi sebanyak 3 kali
+    col gap: atur jarak antar kolom
+    row gap: atur jarak antar baris
+    padding: topbot 5 dan leftrig 70*/
+}
+img {
+    width: 100%;
+    transition: transform .15s ease-in-out;
+    /* lebar elemen img jdi 100% lebar kontainernya 
+    transisi gambar saat terjadi perubahan skala dgn durasi 0.15s
+    jenis animasi: mulai lambat dan akhir lambat*/
+}
+.zoom {
+    overflow: hidden;
+    /* gambar yg melebihi batas kotak tdk ditampilkan saat efek zoom */
+}
+.zoom:hover img{
+    transform: scale(1.1);
+}
+
+
+footer {
+    margin-top: 10px;
+    width: 100%;
+}
+.footer {
+    background-color: rgb(47, 79, 78);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 50px;
+}
+.footer .logos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 5px;
+}
+.footer .logos .logo {
+    width: 50px;
+}
+.footer .contacts, .unhas {
+    color: white;
+    margin-bottom: 5px;
+}
+
+/* media query: utk menyesuaikan tampilan web saat perangkat atau ukuran layar berbeda*/
+@media (max-width: 800px) {
+    .galeri-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 450px) {
+    .galeri-container {
+        grid-template-columns: 1fr;
+    }
+    .footer {
+        flex-direction: column;
+        row-gap: 20px;
+        justify-content: center;
+        /* klo width < 450 gambar jdi 1 kolom, elemen footer jdi susun kebawah */
+    }
+}
