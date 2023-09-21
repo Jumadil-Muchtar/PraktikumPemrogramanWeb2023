@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+.navbar {
+    background-color: orange;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    z-index: 10;
+}
+
+.navbar a{
+    padding: 7px;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar a:hover{
+    background-color: rgb(186, 125, 11);
+}
+
+.about {
+    padding: 5px;
+    padding-top : 100px ;
+    margin: 0px 100px;
+    text-align: justify;
+}
+
+/* .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 30%;
+    justify-content:center;
+    justify-items: center;
+    padding: 20px;
+    gap: 30px;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 50px;
+    border: 1px solid black;
+    overflow: hidden;
+} */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    padding: 6% 10% 6% 10%;
+}
+
+.gallery img {
+    text-align: center;
+    max-width: 100%;
+    height: auto;
+    transition: transform .4s ease;
+}
+
+.pict {
+    overflow: hidden;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+.contact {
+    color: white;
+    font-size: small;
+    background-color: rgb(12, 52, 30);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+}
+
+.logo img {
+    width: 30px ;
+    /* text-align: center; */
+}
+
+.logo-pict {
+    text-align: center;
+}
+
+@media (max-width: 400px) {
+    div.gallery-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .about {
+        margin: 0 auto;
+        padding: 10px 50px;
+    }
+
+    .logo {
+        padding: 0;
+        text-align: center;
+        justify-content: center;
+      }
+
+    .logo-pict {
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    .contact-right {
+        text-align: center;
+        margin-right: 0;
+        font-size: 13px;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 800px) {
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .about {
+        margin: 0 auto;
+        padding: 80px 50px;
+    }
+}
+
+@media (max-width : 768px) {
+    .about {
+        margin: 0 auto;
+        padding: 80px 50px;
+    }
+}
