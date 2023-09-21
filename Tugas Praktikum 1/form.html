@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta lang="id">
+    <title>Form Lanjutan</title>
+</head>
+<body>
+    <h1>Formulir Pendataan Liburan SI 2022</h1>
+    <hr><br>
+    <form>
+        <table>
+            <tr>
+                <td><label for="name">Nama Lengkap</label></td>
+                <td>:</td>
+                <td><input type="text" name="nama" id="name" required></td>
+            </tr>
+            <tr>
+                <td><label for="address">Alamat</label></td>
+                <td>:</td>
+                <td><input type="text" name="alamat" id="address" required></td>
+            </tr>
+            <tr>
+                <td><label for="phone">No. Telepon</label> </td>
+                <td>:</td>
+                <td><input type="text" name="telpon" id="phone" placeholder="08xxxxxxxxxx" pattern="[0-9]{12} required"></td>
+            </tr>
+        </table><br>
+
+        <label for="date">Pilih Tanggal Liburan</label><br>
+        <input type="date" name="tanggal" id="date" required><br>
+        <br>
+
+        <label for="vacation">Pilih Destinasi Liburan</label><br>
+        <select id="vacation" required>
+            <option>Malino</option>
+            <option values="toraja">Toraja</option>
+            <option values="rajaampat" selected>Raja Ampat</option>
+            <option values="maros">Maros</option>
+            <option values="bira">Bira</option>
+        </select>
+        <br>
+        <br>
+
+        <label>Akomodasi ke Tempat Tujuan</label><br>
+        <input type="radio" name="akomodasi" id="transport">
+        <label for="transport">Kendaraan Sendiri</label><br>
+
+        <input type="radio" name="akomodasi" id="join">
+        <label for="join">Ikut Teman</label><br>
+
+        <input type="radio" name="akomodasi" id="nope">
+        <label for="nope">Tidak Ada</label><br>
+        <br>
+        
+        <button type="submit">Kirim</button>
+        <input type="reset">
+    </form>
+</body>
+
+<!-- 
+    tag form = olah data ketika dikirim
+nilai id = nilai for 
+name harus sama dlm 1 bagian
+    value utk mengirim data, nanti muncul diatas klo ada valuenya
+-->
