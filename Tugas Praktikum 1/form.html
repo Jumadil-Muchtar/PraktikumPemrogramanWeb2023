@@ -13,48 +13,46 @@
             <tr>
                 <td><label for="name">Nama Lengkap</label></td>
                 <td>:</td>
-                <td><input type="text" name="nama" id="name" required></td>
+                <td><input type="text" name="nama" id="name" value="" required></td>
             </tr>
             <tr>
                 <td><label for="address">Alamat</label></td>
                 <td>:</td>
-                <td><input type="text" name="alamat" id="address" required></td>
+                <td><input type="text" name="alamat" id="address" value="" required></td>
             </tr>
             <tr>
                 <td><label for="phone">No. Telepon</label> </td>
                 <td>:</td>
-                <td><input type="text" name="telpon" id="phone" placeholder="08xxxxxxxxxx" pattern="[0-9]{12} required"></td>
+                <td><input type="text" name="notelpon" id="phone" value="" placeholder="08xxxxxxxxxx" pattern="[0-9]{12}" required></td>
             </tr>
         </table><br>
 
         <label for="date">Pilih Tanggal Liburan</label><br>
-        <input type="date" name="tanggal" id="date" required><br>
+        <input type="date" name="tanggal" id="date" value="tanggal" required><br>
         <br>
 
         <label for="vacation">Pilih Destinasi Liburan</label><br>
-        <select id="vacation" required>
-            <option>Malino</option>
-            <option values="toraja">Toraja</option>
-            <option values="rajaampat" selected>Raja Ampat</option>
-            <option values="maros">Maros</option>
-            <option values="bira">Bira</option>
+        <select id="vacation" name="destinasi" value="destinasi" required>
+            <option value="malino">Malino</option>
+            <option value="toraja">Toraja</option>
+            <option value="rajaampat" selected>Raja Ampat</option>
+            <option value="maros">Maros</option>
+            <option value="bira">Bira</option>
         </select>
-        <br>
-        <br>
+        <br><br>
 
         <label>Akomodasi ke Tempat Tujuan</label><br>
-        <input type="radio" name="akomodasi" id="transport">
+        <input type="radio" name="akomodasi" id="transport" value="kendaraansendiri">
         <label for="transport">Kendaraan Sendiri</label><br>
 
-        <input type="radio" name="akomodasi" id="join">
+        <input type="radio" name="akomodasi" id="join" value="ikutteman">
         <label for="join">Ikut Teman</label><br>
 
-        <input type="radio" name="akomodasi" id="nope">
-        <label for="nope">Tidak Ada</label><br>
-        <br>
+        <input type="radio" name="akomodasi" id="nope" value="tidakada">
+        <label for="nope">Tidak Ada</label><br><br>
         
-        <button type="submit">Kirim</button>
-        <input type="reset">
+        <button type="submit" name="button" value="kirim">Kirim</button>
+        <input type="reset" name="reset" value="Reset">
     </form>
 </body>
 
