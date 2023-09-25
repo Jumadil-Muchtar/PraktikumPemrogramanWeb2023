@@ -39,12 +39,15 @@
               <tr>
                 <td><label for="telepon">Telepon</label></td>
                 <td>:</td>
-                <td><input type="tel" id="telepon" name="telepon" /></td>
+                <td><input type="tel" id="telepon" name="telepon" pattern="[0-9]{12,13}" placeholder="0812345678921" title="Format nomor telepon yang benar: 0812345678" /></td>
               </tr>
               <tr>
                 <td><label for="gender">Gender</label></td>
                 <td>:</td>
-                <td><input type="radio" name="gender" id="male" />Male <input type="radio" name="gender" id="female" />Female</td>
+                <td>
+                  <label for="male"><input type="radio" name="gender" id="male" /> Male</label>
+                  <label for="female"><input type="radio" name="gender" id="female" /> Female</label>
+                </td>
               </tr>
             </tbody>
           </table>
