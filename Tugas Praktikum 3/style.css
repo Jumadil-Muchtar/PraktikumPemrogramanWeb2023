@@ -1,0 +1,93 @@
+body {
+  background-image: url(img/bg.png);
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: 60%;    
+}
+
+
+/* Navbar */
+.navbar-brand {
+  font-family: Viga;
+  font-size: 32px;
+  color: darkorange;
+}
+.nav-link {
+  font-family: Montserrat;
+  font-weight: 500;
+  margin-top: -5px;
+}
+
+
+/* Utility */
+.tombol {
+  font-family: Montserrat;
+  font-weight: 500;
+  border-radius: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 10px;
+  margin-top: -5px;
+}
+
+
+/* Words */
+.row {
+  margin-top: 100px;
+}
+h1{
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 40px;
+  color: #383957;
+  white-space: normal;
+  line-height: 1;
+}
+h3 {
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 20px;
+  white-space: normal;
+  line-height: 1.5;
+}
+p {
+  font-family: Montserrat;
+  font-weight: 500;
+  color: black;
+  font-size: 15px;
+  margin-top: 20px;
+  white-space: unset;
+}
+.container .row a {
+  display: inline-block;
+  color: white;
+  font-family: Montserrat;
+  font-weight: 500;
+  text-decoration: none;
+  background-color: darkorange;
+  border-radius: 20px;
+  padding: 5px 15px;
+  margin-top: 50px;
+}
+
+
+
+
+
+/* DESKTOP VERSION */
+@media (min-width: 800px) {     
+/* width diatas 800 -> text jdi uppercase dst */
+  .tombol {
+    text-transform: uppercase;
+  }
+  .nav-link {
+    text-transform: uppercase;
+    margin-right: 30px;
+  }
+  h1, h3 {
+    white-space: nowrap;
+  }
+  p {
+    white-space: normal;
+  }
+}
