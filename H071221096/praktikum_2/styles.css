@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: orangered;
+    z-index: 1000;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+.navbar ul li {
+    cursor: pointer;
+    padding: 20px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar ul li:hover {
+    background-color: orange;
+}
+
+.About {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    min-width: 300px;
+    max-width: 900px;
+    text-align: justify;
+    margin: 90px auto 20px;
+}
+
+.Gallery {
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    justify-items: center;
+}
+
+.wrapper {
+    max-width: 1000px;;
+    margin: auto;
+}
+
+div.allMT {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.allMT img {
+    width: 100%;
+    height: auto;
+}
+
+div.allMT :hover {
+    transform: scale(1.5);
+    transition: all 1.1s;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    background-color: green;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width: auto;
+}
+
+.logo {
+    margin: 20px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo img {
+    width: 100px;
+}
+
+.logo p {
+    margin-top: 10px;
+}
+
+.Contact {
+    margin: 20px;
+    padding-right: 20px;
+}
+
+.Contact p {
+    margin: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .About {
+        margin: 30px auto 20px;
+        padding: 0 20px; 
+    }
+
+    .Gallery {
+        margin-bottom: 10px;
+        grid-template-columns: 2fr 1fr;
+        justify-content: center;
+    }
+
+    .allMT {
+        width: 300px;
+        justify-content: center;
+    }
+
+    .wrapper {
+        width: 90%; 
+    }
+
+    .footer {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .logo, .Contact {
+        margin: 10px;
+        padding: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .logo p, .Contact p {
+        margin: 5px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .About {
+        margin: 30px auto 20px;
+        padding: 0 20px; 
+    }
+
+    .Gallery {
+        margin-bottom: 10px;
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+
+    .allMT {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .wrapper {
+        width: 90%; 
+    }
+
+    .footer {
+        width: 100%; 
+        flex-direction: column;
+    }
+
+    .logo, .Contact {
+        margin: 10px;
+        padding: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .logo p, .Contact p {
+        margin: 5px;
+    }
+}
+
