@@ -1,0 +1,47 @@
+* {
+  font-family: sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom, #ffffff, #000000);
+}
+
+.collapse ul li a:hover {
+  color: #0072ff;
+}
+.carousel-item {
+  height: 75vh;
+}
+
+.carousel-item img {
+  height: 75vh;
+  object-fit: cover;
+}
+
+.section-statistics {
+  margin-top: -2rem;
+  position: relative;
+}
+
+.statistic-item {
+  background: linear-gradient(32deg, #0072ff 0%, #0b5ed7 100%);
+  color: #ffffff;
+  padding: 1rem 0;
+}
+
+.section-services,
+.section-quality {
+  padding-top: 11%;
+  padding-bottom: 11%;
+}
+
+.section-services {
+  background: linear-gradient(to bottom, #c7c7c7, #8c8c8c);
+}
+.section-testimoni {
+  background: linear-gradient(to bottom, #4b4b4b, #0a0a0a);
+
+  color: #ffffff;
+  padding-top: 4%;
+  padding-bottom: 4%;
+}
