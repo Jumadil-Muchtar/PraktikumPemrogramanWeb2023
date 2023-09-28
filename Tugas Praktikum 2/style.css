@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+/* navbar section */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+  padding: 1.4rem 7%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.navbar .navbar-nav a {
+  display: inline-block;
+  padding: 0 1rem;
+  color: white;
+  font-weight: 500;
+  font-family: sans-serif;
+}
+
+.navbar .navbar-nav a::after {
+  content: ""; /*supaya bisa diatur dimensinya*/
+  display: block;
+  padding-bottom: 0.5rem; /*jarak garis*/
+  border-bottom: 0.1rem solid rgb(255, 255, 255);
+  transform: scaleX(0);
+  transition: 0.2s linear; /*delay muncul garis*/
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+  color: #ffffff;
+}
+
+/* about section */
+.title {
+  display: flex;
+  justify-content: center;
+  padding: 7rem 0 2rem;
+}
+
+.title h1 {
+  color: blue;
+  font-family: sans-serif;
+  font-weight: 500;
+}
+
+
+.content {
+  display: flex;
+  justify-content: center;
+  padding: 0 10%;
+}
+
+.content p {
+  color: blue;
+  font-weight: 100;
+  font-family: sans-serif;
+  text-align: justify;
+}
+
+/* Gallery Section */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 2rem 0 0;
+}
+
+.container .foto img {
+  width: 80%;
+  padding: 1rem 0;
+  transition: 1s;
+  text-align: center;
+}
+
+.container .foto img:hover {
+  transform: scale(1.1);
+}
+
+/* Footer Section */
+footer {
+  display: flex;
+  align-items: center;
+  background-color: blue;
+  text-align: center;
+  flex-direction: column;
+  padding: 1rem 0;
+  margin-top: 3rem;
+}
+
+footer .logo {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+footer .logo img {
+  width: 5%;
+  display: flex;
+  padding: 0.5rem 7rem;
+}
+
+footer .logo h5 {
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0.5rem 4rem;
+}
+
+footer .links {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+
+footer .links p {
+  display: flex;
+  justify-content: flex-end;
+  color: #ffffff;
+  padding: 0.5rem 7rem;
+}
+
+footer .credit {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .credit a {
+  color: #ffffff;
+}
+
+.footer .credit p {
+  color: #ffffff;
+}
