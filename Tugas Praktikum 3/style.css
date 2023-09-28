@@ -1,0 +1,46 @@
+.img-thumbnail {
+    background-color: yellow;
+    border-color: yellow;
+  }
+
+.card {
+  border: 3px solid;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05); 
+}
+
+.card-body {
+  border-top: 3px solid;
+}
+
+.rounded-card {
+  border-radius: 15px;
+}
+
+.hover-scale {
+  transition: transform 0.3s; 
+}
+
+.hover-scale:hover {
+  transform: scale(1.1)
+}
+
+.heading-style h5 {
+  font-weight: bold;
+}
+
+.logo-size img {
+  width: 20px;
+  margin-right: 5px;
+}
+
+
+
+
+
+
+
+
