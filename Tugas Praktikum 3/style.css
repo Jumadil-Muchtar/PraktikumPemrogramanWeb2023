@@ -54,6 +54,7 @@ body {
 
 .card {
     background-color: #d6782c;
+    margin: auto;
 }
 
 .gallery-h1 {
@@ -67,13 +68,6 @@ body {
     width: 100%;
 }
 
-.card-footer {
-    background-color: #d6782c;
-    margin-top: 30px;
-    width: auto;
-    height: 100px;
-}
-
 .center-text {
     text-align: center; /* Menengahkan teks secara horizontal */
     margin-top: 10px; /* Atur margin atas sesuai kebutuhan Anda */
@@ -82,7 +76,4 @@ body {
 .full-width-footer {
     background-color:#d6782c; /* Warna latar belakang footer */
     color: black; /* Warna teks */
-    text-align: center; /* Menengahkan teks secara horizontal */
-    padding: 10px 0; /* Ruang di dalam footer */
-    margin-top: 20px;
 }
