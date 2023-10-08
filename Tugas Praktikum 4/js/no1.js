@@ -1,20 +1,10 @@
-function pangkat(angka, pangkat) {
-  let hasil = 1;
-  for (let i = 1; i <= pangkat; i++) {
-    hasil *= angka;
-  }
-  return hasil;
-}
+let angka = parseInt(prompt("Masukkan Angka : "))
+let pangkat = parseInt(prompt("Masukkan Pangkat : "))
 
-const angkaInput = prompt("Masukkan Angka : ");
-const pangkatInput = prompt("Masukkan Pangkat : ");
-
-// Memeriksa apakah input adalah angka yang valid
-if (!isNaN(angkaInput) && !isNaN(pangkatInput)) {
-  const angka1 = parseFloat(angkaInput);
-  const pangkat1 = parseInt(pangkatInput);
-  const hasil = pangkat(angka1, pangkat1);
-  console.log(`${angka1} Pangkat ${pangkat1} = ${hasil}`);
+if (!isNaN(angka) || !isNaN(pangkat)) {
+  let hasil = angka**pangkat
+  alert(`Hasilnya Adalah ${hasil}`)
 } else {
-  console.log("Masukan tidak valid. Harap masukkan angka yang valid.");
+  alert('Input Harus Berupa Angka')
 }
+

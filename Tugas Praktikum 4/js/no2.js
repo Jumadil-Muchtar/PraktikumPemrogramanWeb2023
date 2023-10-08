@@ -1,38 +1,32 @@
-function cipherText(text, shift) {
-  let result = "";
+let kata = prompt("Masukkan kata: ")
+let n = parseInt(prompt("Masukkan nilai shift: "))
 
-  for (let i = 0; i < text.length; i++) {
-    let char = text[i];
+if (Number.isNaN(n)) {
+    alert("Nilai n harus berupa angka")
+} else {
+    let final = []
 
-    // Periksa apakah karakter adalah huruf alfabet
-    if (/[a-zA-Z]/.test(char)) {
-      const upperCase = char === char.toUpperCase();
-      const offset = upperCase ? "A".charCodeAt(0) : "a".charCodeAt(0);
-      const charCode = char.charCodeAt(0);
-      const shiftedCharCode = ((((charCode - offset + shift) % 26) + 26) % 26) + offset;
-      const shiftedChar = String.fromCharCode(shiftedCharCode);
+    for (let i = 0; i < kata.length; i++) {
+        let charcode = kata[i].charCodeAt(0)
 
-      result += upperCase ? shiftedChar : shiftedChar.toLowerCase();
-    } else {
-      alert("Masukkan Teks Yang Hanya Berupa Angka");
+        if ((charcode >= 65 && charcode <= 90) || (charcode >= 97 && charcode <= 122)) {
+            let code = charcode + n
+
+            if ((charcode >= 65 && charcode <= 90 && code > 90) || (charcode >= 97 && charcode <= 122 && code > 122)) {
+                code -= 26
+            }
+            
+
+            let shifted_char = String.fromCharCode(code)
+            final.push(shifted_char)
+        } else {
+            alert("Masukkan string yang valid")
+            break
+        }
     }
-  }
 
-  return result;
+    if (final.length > 0) {
+        final = final.join("")
+        alert(`Jadi Kata ${kata} Jika Di Shift Sebanyak ${n} Kali = ${final}`)
+    }
 }
-
-// Contoh penggunaan paki prompt
-// const teks = prompt("Masukkan Teks : ");
-// const shift = parseInt(prompt("Masukkan Shift : "));
-// const encryptedText = cipherText(teks, shiftInt);
-// console.log(`Plaintext: ${teks}`);
-// console.log(`Shift: ${shift}`);
-// console.log(`Ciphertext: ${encryptedText}`);
-
-// Contoh penggunaan memiliki nilai langsung
-const teks = "Indonesia";
-const shift = 13;
-const encryptedText = cipherText(teks, shift);
-console.log(`Plaintext: ${teks}`);
-console.log(`Shift: ${shift}`);
-console.log(`Ciphertext: ${encryptedText}`);
