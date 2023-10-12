@@ -1,0 +1,19 @@
+body {
+  background-image: url('images/background/awal.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+button {
+    background-color: white;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
