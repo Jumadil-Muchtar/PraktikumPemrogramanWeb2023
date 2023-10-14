@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mooli&family=Pacifico&display=swap');
+* {
+  font-family: "Inter", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+body {
+  text-align: center;
+  color: #fff;
+}
+
+.container {
+  max-width: 600px;
+}
+
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+/* Mengatur elemen lain di atas video */
+body {
+  text-align: center;
+  color: #fff;
+}
+
+.container {
+  max-width: 600px;
+}
+
+/* Seluruh gaya lain yang Anda miliki tetap tidak berubah */
+
+
+h1 {
+  font-size: 35px;
+  color: #000000 ;
+  margin-bottom: 3px;
+  font-family: "Mooli",sans-serif;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 25px;
+  color: aliceblue;
+}
+p {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.bot-cards img,
+.my-cards img {
+  width: 150px;
+  margin: 1px;
+}
+
+button {
+  width: 150px;
+  font-size: 16px;
+  margin: 2px;
+}
+
+.bot-cards,
+.my-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.card {
+  max-width: 100px;
+  height: auto;
+}
+
+#result {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #28a745;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+}
+
+.btn-primary,
+.btn-success,
+.btn-danger {
+  width: 80%;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+body.dark-mode {
+  background-color: #212529;
+  color: #fff;
+}
+
+.btn-dark {
+  background-color: #343a40;
+  color: #fff;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.btn-dark:hover {
+  background-color: #495057;
+}
+
+#btn-start-game:hover {
+  filter: brightness(50%);
+}
