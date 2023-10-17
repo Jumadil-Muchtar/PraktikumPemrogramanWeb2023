@@ -110,16 +110,16 @@
                         $tanggal_lahir = date('d M Y', strtotime($tanggal_lahir));
 
                         $output = "<h2>OUTPUT</h2>";
-                        $output .= "Nama" . "  " . " : $nama<br>";
-                        $output .= "Usia : $usia tahun<br>";
-                        $output .= "Email : $email<br>";
-                        $output .= "Tanggal Lahir : $tanggal_lahir<br>";
-                        $output .= "Jenis Kelamin : $jenis_kelamin<br>";
+                        $output .= "<p>Nama" . "  " . " : $nama</p><br>";
+                        $output .= "<p>Usia : $usia tahun</p><br>";
+                        $output .= "<p>Email : $email</p><br>";
+                        $output .= "<p>Tanggal Lahir : $tanggal_lahir</p><br>";
+                        $output .= "<p>Jenis Kelamin : $jenis_kelamin</p><br>";
 
                         if (!empty($bahasa)) {
-                            $output .= "Bahasa yang dikuasai : " . implode(", ", $bahasa) . "<br>";
+                            $output .= "<p>Bahasa yang dikuasai : " . implode(", ", $bahasa) . "</p><br>";
                         } else {
-                            $output .= "Tidak Ada Bahasa Yang Dikuasai";
+                            $output .= "<p>Tidak Ada Bahasa Yang Dikuasai</p>";
                         }
                         echo $output;
                     }
