@@ -1,9 +1,6 @@
 let botSums = 0;
 let mySums = 0;
 
-let botASCards = 0;
-let myASCards = 0;
-
 let cards;
 let isCanHit = true;
 
@@ -34,7 +31,7 @@ window.onload = function () {
 };
 
 function buildUserCards() { 
-  let cardTypes = ["H", "B", "S", "K"];
+  let cardTypes = ["H", "B", "S", "K"]; //H untuk Heart, B untuk belah ketupat, S untuk skop, K untuk bunga yg keriting
   let cardValues = [
     "A",
     "2",
@@ -72,9 +69,9 @@ startGameButton.addEventListener("click", function () {
   if (startGameButton.textContent === "TRY AGAIN") { 
     botSums = 0; 
     mySums = 0;
-    botASCards = 0;
-    myASCards = 0;
     isCanHit = true;
+
+    botSumsElement.textContent = '';
 
     const allCardsImage = document.querySelectorAll("img"); //memilih semua elemen img dn di hps 
     for (let i = 0; i < allCardsImage.length; i++) {
@@ -92,8 +89,7 @@ startGameButton.addEventListener("click", function () {
 
   takeCardButton.disabled = false; 
   holdCardsButton.disabled = false;
-  startGameButton.textContent = "TRY AGAIN"; //mengganti teks pada tombol "startGameButton" menjadi "TRY AGAIN".
-  botSums = 0;
+  startGameButton.textContent = "TRY AGAIN"; //mengganti teks pada tombol "startGameButton" menjadi "TRY AGAIN"
   startGameButton.setAttribute("disabled", true); 
 
 
@@ -103,7 +99,6 @@ startGameButton.addEventListener("click", function () {
     let card = cards.pop(); 
     cardImg.src = `/images/cards/${card}.png`; 
     mySums += getValueOfCard(card); 
-    myASCards += checkASCard(card); 
     mySumsElement.textContent = mySums; 
     myCardsElement.append(cardImg); 
 
@@ -117,11 +112,8 @@ takeCardButton.addEventListener("click", function () {
   let card = cards.pop(); 
   cardImg.src = `/images/cards/${card}.png`;
   mySums += getValueOfCard(card); 
-  myASCards += checkASCard(card);
   mySumsElement.textContent = mySums;
   myCardsElement.append(cardImg);
-
-  if (reduceASCardValue(mySums, myASCards) > 21) isCanHit = false; 
 
   if (mySums > 21) { 
     takeCardButton.disabled = true; 
@@ -139,13 +131,13 @@ holdCardsButton.addEventListener("click", function () {
     document.getElementsByClassName("hidden-card")[0].remove();
   } , 1000);
 
+
   function addBotCards() {
     setTimeout(function () { 
       let cardImg = document.createElement("img"); 
       let card = cards.pop();
       cardImg.src = `/images/cards/${card}.png`; 
       botSums += getValueOfCard(card);
-      botASCards += checkASCard(card); 
       botCardsElement.append(cardImg); 
       botSumsElement.textContent = botSums; 
 
@@ -153,17 +145,15 @@ holdCardsButton.addEventListener("click", function () {
       if (botSums < 21) { 
         addBotCards();
       } else { 
-        botSums = reduceASCardValue(botSums, botASCards); 
-        mySums = reduceASCardValue(mySums, myASCards);
         isCanHit = false;
 
         let message = "";
-        if (mySums > 21 ) {  
+        if (mySums > 21  || mySums % 22 < botSums % 22) {  
           message = "KALAH: SILAHKAN BERMAIN LAGI";
-          myMoney.textContent -= inputMoney.value;
+          myMoney.textContent = parseInt(myMoney.textContent) - inputMoney.value;
         } else if (botSums  < 21 || mySums % 22 > botSums % 22) {
           message = "SELAMAT ANDA MEMENANGKAN PERMAINAN";
-          myMoney.textContent = inputMoney.value * 6 ;
+          myMoney.textContent = parseInt(myMoney.textContent) + inputMoney.value * 5;
         } else if (mySums === botSums) message = "SERI";
 
         resultElement.textContent = message;
@@ -189,17 +179,4 @@ function getValueOfCard(card) {
   }
 
   return parseInt(value);
-}
-
-function checkASCard(card) {
-  if (card[0] == "A") return 1;
-  else return 0;
-}
-
-function reduceASCardValue(sums, asCards) {
-  while (sums > 21 && asCards > 0) {
-    sums -= 10;
-    asCards -= 1;
-  }
-  return sums;
 }
