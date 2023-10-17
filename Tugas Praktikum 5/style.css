@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.background {
+    background:transparent url('images/table2.jpg');
+    background-size: cover;
+    height: 100vh;
+}
+
+.start {
+    text-align: center;
+}
+
+h1 {
+    padding-top: 20px;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+span {
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+input {
+    border-radius: 10px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.winner {
+    color: white;
+}
+
+
+
+
+
