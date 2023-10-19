@@ -161,16 +161,15 @@ standCardButton.addEventListener("click", function () {
         mySums = reduceASCardValue(mySums, myASCards);
         isCanHit = false;
 
-        let message = "";
-        if (mySums > 21 || mySums % 22 < botSums % 22) {
+        if (mySums > 21 || mySums < botSums) {
           resultElement.textContent = "You Lose";
           myMoney.textContent =
             parseInt(myMoney.textContent) - parseInt(inputMoney.value);
-        } else if (botSums > 21 || mySums % 22 > botSums % 22) {
+        } else if (botSums > 21 || mySums > botSums) {
           resultElement.textContent = "You Won";
           myMoney.textContent =
             parseInt(myMoney.textContent) + parseInt(inputMoney.value);
-        } else if (mySums % 22 === botSums % 22) {
+        } else if (mySums === botSums) {
           resultElement.textContent = "Draw";
         }
 
