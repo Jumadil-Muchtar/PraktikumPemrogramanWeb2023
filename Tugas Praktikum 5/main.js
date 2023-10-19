@@ -109,7 +109,7 @@ startGameButton.addEventListener("click", function () {
   for (let i = 0; i < 2; i++) {
     let cardImg = document.createElement("img");
     let card = cards.pop();
-    cardImg.src = `/images/cards/${card}.png`;
+    cardImg.src = `images/cards/${card}.png`;
     mySums += getValueOfCard(card);
     myASCards += checkASCard(card);
     mySumsElement.textContent = mySums;
@@ -122,7 +122,7 @@ hitCardButton.addEventListener("click", function () {
 
   let cardImg = document.createElement("img");
   let card = cards.pop();
-  cardImg.src = `/images/cards/${card}.png`;
+  cardImg.src = `images/cards/${card}.png`;
   mySums += getValueOfCard(card);
   myASCards += checkASCard(card);
   mySumsElement.textContent = mySums;
@@ -148,7 +148,7 @@ standCardButton.addEventListener("click", function () {
     setTimeout(() => {
       let cardImg = document.createElement("img");
       let card = cards.pop();
-      cardImg.src = `/images/cards/${card}.png`;
+      cardImg.src = `images/cards/${card}.png`;
       botSums += getValueOfCard(card);
       botASCards += checkASCard(card);
       botCardsElement.append(cardImg);
