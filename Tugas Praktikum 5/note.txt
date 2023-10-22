@@ -1,0 +1,29 @@
+// deck of cards -> 52 cards, each of suits: 13 cards
+// select a card (random) -> allocate it to the dealer (ai) or the player (me)
+// deal hands to ai & me -> 4 random cards
+// +hide 1 ai's card
+// option to hide or stand
+    // if hit add card
+    // if stand let dealer play
+// OPTIONAL: if ai cards and my cards are the same (ex:21), then push
+// determine the winner
+
+/*
+spades: hitam, love kebalik
+heart: merah, heart shape
+clubs: hitam, 3leaf clover
+diamond: merah, diamond shape
+ */
+
+1. player harus memasukkan jumlah saldo dan taruhan yg diinginkan sesuai
+ketentuan sblm memulai game, jika sudah sesuai ketentuan, game dapat dimulai
+dgn menekan tombol start
+2. kartu player dan dealer akan dibagikan masing2 2 kartu, (createdeck -> selectrandom -> dealhands)
+player dapat menambahkan kartu dgn menekan tombol hit, jika tidak bisa menekan 
+tombol pass untuk membiarkan dealer bermain
+3. program akan menentukan pemenangnya (decidewinner) dgn menghitung total kartu masing2 
+pemain (calcvalue) di akhir permainan  dgn menampilkan total kartu player dan 
+dealer dan juga pesan menang (bust/win) pd player atau dealer
+4. saldo player juga akan ditampilkan setelah ditentukan pemenangnya, jika player menang
+maka saldo bertambah, jika kalah maka saldo berkurang
+5. setelah game selesai, player dapat memulai ulang game dgn menekan tombol play again
