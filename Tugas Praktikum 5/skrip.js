@@ -8,9 +8,11 @@ const DEALER = document.getElementById("dealer");
 const PLAYER = document.getElementById("player");
 const HIT_BUTTON = document.getElementById("hit-button");
 const PASS_BUTTON = document.getElementById("pass-button");
-const BUTTON_CONTAINER = document.getElementById("button-container");
-const NOTICE = document.getElementById("notice");
-const NEX_HAND_BUTTON = document.getElementById("next-hand-button");
+const PLAY_AGAIN_BUTTON = document.getElementById("play-button");
+const START_BUTTON = document.getElementById("start-button");
+const AMOUNT = document.getElementById("amount");
+const BET = document.getElementById("bet");
+const AMOUNT_P = document.getElementById("amount-p");
 const SUM_DEALER = document.getElementById("total-dealer")
 const SUM_PLAYER = document.getElementById("total-player")
 
@@ -19,55 +21,71 @@ let dealerHand = [];
 let playerHand = [];
 let totalPlayerCardValue = 0;
 let totalDealerCardValue = 0;
+// let gameEnded = false;
+
+
+const disableButtons = () => {
+    HIT_BUTTON.disabled = true;
+    PASS_BUTTON.disabled = true;
+};
+
+
+// untuk cek apakah saldo dan taruhan sudah terisi dgn benar
+function beforeStart(){
+    disableButtons();
+    // konversi value amount jdi int
+    const saldo = parseInt(AMOUNT.value);
+    const taruhan = parseInt(BET.value);
+    // isNaN untuk memeriksa apakah suatu nilai bukan angka 
+    if (!isNaN(saldo) && !isNaN(taruhan) && saldo > 0 && taruhan > 0 && taruhan <= saldo) {
+        START_BUTTON.disabled = false;
+    } else {
+        START_BUTTON.disabled = true;
+    }
+}
 
 
 function createDeck() {
+    console.log("LOG: creating deck.....");
     const deck = [];
     SUITS.forEach((suit) => {
         VALUES.forEach((value) => {
             const card = value + suit;
-            // console.log(card);
             deck.push(card);
         });
     });
+    console.log("New deck : "+deck);
     return deck;
 }
-// output createDeck
-// createDeck();
-// console.log(createDeck());
 
-// const shuffleDecks = (num) => {
-//     for (let i = 0; i < num; i++) {
-//         const newDeck = createDeck();
-//         allDecks = [...allDecks, ...newDeck];
-//     }
-// }
 
+//definisikan createdeck diluar selectrandom spy jdi 1 deck
+const blackjackDeck = createDeck();
 function selectRandomCard() {
-    const allDecks = createDeck();
     // math.random return number between 0 & 1 then multiply by length of alldecks to get the randomcard
     // math.floor never reach the length (length - 1)
-    const randomIndex = Math.floor(Math.random() * allDecks.length);    // outputnya index kartu sesuai urutan
-    const card = allDecks[randomIndex]                                 // outputnya kartu(value+suit)
+    const randomIndex = Math.floor(Math.random() * blackjackDeck.length);    // outputnya index kartu sesuai urutan
+    const card = blackjackDeck[randomIndex]                                 // outputnya kartu(value+suit)
     // utk keluarin kartu yg udh di select dri deck (keluarin si randomindex sebanyak 1)
-    allDecks.splice(randomIndex, 1);
+    blackjackDeck.splice(randomIndex, 1);
     // console.log(randomIndex);
     return card;
 }
-// console.log(allDecks.length);
-// output selectRandomCard''
-// const randomCard = selectRandomCard();
-// console.log(randomCard);
 
 
 // bagiin kartu ke dealer dan player masing2 2 -> yg munculin ke4 kartu
-function dealHands() {
+function dealHands() {    
+    START_BUTTON.disabled = true;
+    HIT_BUTTON.disabled = false;
+    PASS_BUTTON.disabled = false;
+
     // bikin array yg isinya 2 kartu random
+    console.log("LOG: dealHands....");
     dealerHand = [selectRandomCard(), selectRandomCard()];
-    console.log("kartu pertama", dealerHand[0]);
-    console.log("kartu kedua", dealerHand[1]);
-    totalDealerCardValue += calcValue(dealerHand);
-    SUM_DEALER.innerHTML = "SUM = " + totalDealerCardValue;
+    console.log("dealer card : ", dealerHand);
+    totalDealerCardValue = calcValue(dealerHand);
+    console.log("total value of dealer card : ", totalDealerCardValue)
+    SUM_DEALER.innerHTML = "SUM = guess? ";
     // masukin arraynya biar jdi didalem kartu
     dealerHand.forEach((card, index) => {
         const newCard = CARD_MODEL.cloneNode(true);
@@ -75,8 +93,11 @@ function dealHands() {
         (card[card.length - 1] === '♦' || card[card.length - 1] === '♥') && newCard.setAttribute('data-red', true);
         DEALER.append(newCard);
     });
+
     playerHand = [selectRandomCard(), selectRandomCard()];
-    totalPlayerCardValue += calcValue(playerHand);
+    console.log("player card : ", playerHand);
+    totalPlayerCardValue = calcValue(playerHand);
+    console.log("total value of dealer card : ", totalPlayerCardValue);
     SUM_PLAYER.innerHTML = "SUM = " + totalPlayerCardValue;
     playerHand.forEach((card) => {
         const newCard = CARD_MODEL.cloneNode(true);
@@ -86,11 +107,11 @@ function dealHands() {
     });
 }
 
+
 function calcValue(hand) {
     let value = 0;
     let hasAce = 0;
     hand.forEach((card) => {
-        // console.log("calcvalue", card);
         if (card.length === 2) {
             if (card[0] === 'A') {
                 hasAce += 1
@@ -108,114 +129,178 @@ function calcValue(hand) {
     return value;
 }
 
-// untuk tombol hit (tambah kartu player), yg keluar cuma kalkulasi stlh hit
-function hitPlayer() {
-    const newCard = selectRandomCard();
-    playerHand.push(newCard);
-    totalPlayerCardValue += calcValue(playerHand);
-    SUM_PLAYER.innerHTML = "SUM = " + totalPlayerCardValue;
-    // playerHand.forEach((newCard) => {
-    //     const newCard = CARD_MODEL.cloneNode(true);
-    //     newCard.innerHTML = card;
-    //     (card[card.length - 1] === '♦' || card[card.length - 1] === '♥') && newCard.setAttribute('data-red', true);
-    //     PLAYER.append(newCard);
-    // });
-    const newCardNode = CARD_MODEL.cloneNode(true);
-    newCardNode.innerHTML = newCard;
-    // (newCard[newCard.length - 1] === '♦' || newCard[newCard.length - 1] === '♥') && newCard.setAttribute('data-red', true);        
-    PLAYER.append(newCardNode);
-    // const handValue = calcValue(playerHand);
-    if (totalPlayerCardValue > 21) {
-        console.log("you bust!");
-        alert("you bust!");
-    }
-};
 
-
-const decideWinner = () => {  //play it on the safe side
-    // let dealerValue = calcValue(dealerHand);
-    // let playerValue = calcValue(playerHand);
-
-    alert(`Dealer has ${totalDealerCardValue}, you have ${totalPlayerCardValue}`)
-    if (totalPlayerCardValue <= 21 && totalPlayerCardValue > totalDealerCardValue){
-        alert("player wins!")
-    } else {
-        alert("dealer wins!")
-    }
-    // dealerValue > playerValue ? alert("dealer wins!") : alert("player wins!")
+const messageDealer = document.getElementById("message-dealer");
+function displayDealerWin() {
+    messageDealer.textContent = "dealer win!";
+}
+function displayDealerBust() {
+    messageDealer.textContent = "dealer bust!";
 }
 
-const hitDealer = () => {
-    for (let i = 0; i < dealerHand.length; i++) {
-        console.log("+",dealerHand[i]);
+const messagePlayer = document.getElementById("message-player");
+function displayPlayerWin() {
+    messagePlayer.textContent = "player win!";
+}
+function displayPlayerBust() {
+    messagePlayer.textContent = "player bust!";
+}
+
+const messageDraw = document.getElementById("message-draw");
+function displayDraw(){
+    messageDraw.textContent = "draw match"
+}
+
+
+// untuk menampilkan jumlah saldo setelah decidewinner
+function countWin(){
+    let saldo = parseInt(AMOUNT.value);
+    let taruhan = parseInt(BET.value);
+
+    saldo += taruhan;
+    AMOUNT_P.innerHTML = "Saldo Anda sekarang: $" + saldo;
+}
+function countBust(){
+    let saldo = parseInt(AMOUNT.value);
+    let taruhan = parseInt(BET.value);
+
+    saldo -= taruhan;
+    AMOUNT_P.innerHTML = "Saldo Anda sekarang: $" + saldo;
+}
+
+
+function hitPlayer() {
+    // if (gameEnded) {
+    //     return;   // Do nothing if the game has already ended
+    // }
+    console.log("------------------------------------------------");
+    console.log("LOG: hit player....");
+    console.log("taking card.....");
+    const newCard = selectRandomCard();
+    console.log("new player card : ", newCard);
+    playerHand.push(newCard);
+    console.log("all player card : ", playerHand);
+    totalPlayerCardValue = calcValue(playerHand);
+    console.log("total value of player card : ", totalPlayerCardValue)
+
+    SUM_PLAYER.innerHTML = "SUM = " + totalPlayerCardValue;
+    const newCardNode = CARD_MODEL.cloneNode(true);
+    newCardNode.innerHTML = newCard;
+    // biar kartu tambahannya yg diamond sm heart warna merah
+    if (newCard[newCard.length - 1] === '♦' || newCard[newCard.length - 1] === '♥') {
+        newCardNode.setAttribute('data-red', true);
     }
+    PLAYER.append(newCardNode);
+
+    if (totalPlayerCardValue > 21) {
+        displayPlayerBust();
+        countBust();
+        disableButtons(); 
+        SUM_DEALER.innerHTML = "SUM = " + totalDealerCardValue;
+    } else if (totalPlayerCardValue == 21) {
+        displayPlayerWin();
+        countWin();
+        disableButtons(); 
+        SUM_DEALER.innerHTML = "SUM = " + totalDealerCardValue;
+    }
+}
+
+function decideWinner() {  
+    if (totalPlayerCardValue <= 21 && totalPlayerCardValue > totalDealerCardValue){
+        displayPlayerWin()
+        countWin();
+    } else if(totalPlayerCardValue > 21){
+        displayPlayerBust();
+        countBust();
+    } else if(totalDealerCardValue > 21){
+        displayDealerBust();
+        countWin();
+    } else if(totalDealerCardValue == totalPlayerCardValue){
+        displayDraw();
+    } else {
+        displayDealerWin();
+        countBust();
+    }
+
+    // gameEnded = true; 
+    disableButtons();
+    SUM_DEALER.innerHTML = "SUM = " + totalDealerCardValue;
+}
+
+function hitDealer() {
+    // if (gameEnded) {
+    //     return; // Do nothing if the game has already ended
+    // }
+    console.log("all dealer card : ", dealerHand);
+    console.log("total value of dealer card :" + totalDealerCardValue);    
+    console.log("------------------------------------------------");
+    console.log("LOG: hit dealer....");
+    console.log("taking card? or pass?");
+
     //flip green card
     const hiddenCard = DEALER.children[0];
     hiddenCard.classList.remove("back");
-    //1 hapus semua card yg ada didealer, ambil objek pke getelementbyclass, hapus semua child
-    //2 buat kartu sebanyak jumlah kartu dealer, 
-    // while (dealerHand.length > 0) {
-    //     dealerHand[0].parentNode.removeChild(cards[0]);
-    // }
-   
-
-   
-
-
-    // const newCardNode = CARD_MODEL.cloneNode(true);
-    // newCardNode.innerHTML = newCard;
-    // DEALER.append(newCard);
     hiddenCard.innerHTML = dealerHand[0];
+
     //calc hand value
     let handValue = totalDealerCardValue;
-    console.log("sblm dicekkkkkk",totalDealerCardValue);
-   
-
-
     if (handValue < 16) {
-        console.log("before", totalDealerCardValue);
+        console.log("Dealer taking card.....");
         let newCard = selectRandomCard();
-        console.log(newCard);
+        console.log("new card : "+ newCard);
         dealerHand.push(newCard);
-        totalDealerCardValue += calcValue(dealerHand);
-        console.log(totalDealerCardValue);
-        for (let i = 0; i < dealerHand.length; i++) {
-            console.log("-",dealerHand[i]);
-        }
+        console.log("all card of dealer : ", dealerHand);
+        totalDealerCardValue = calcValue(dealerHand);
+        console.log("total value of dealer card : ", totalDealerCardValue);
         SUM_DEALER.innerHTML = "SUM = " + totalDealerCardValue;
         const newCardNode = CARD_MODEL.cloneNode(true);
         newCardNode.innerHTML = newCard;
-        // // (newCard[newCard.length - 1] === '♦' || newCard[newCard.length - 1] === '♥') && newCard.setAttribute('data-red', true);        
-        DEALER.append(newCardNode)
-        // handValue = calcValue(dealerHand);
-    }
-    for (let i = 0; i < dealerHand.length; i++) {
-        console.log("++",dealerHand[i]);
-    }
-
-    if (handValue < 16) {
+        // biar kartu tambahannya yg diamond sm heart warna merah
+        if (newCard[newCard.length - 1] === '♦' || newCard[newCard.length - 1] === '♥') {
+            newCardNode.setAttribute('data-red', true);
+        }
+        DEALER.append(newCardNode);
         hitDealer();
-    }
-    else if (handValue === 21) {
-        alert("dealer has 21!")
-    }
-    else if (handValue > 21) {
-        alert("dealer bust")
-    }
-    else {
+    } else if (handValue === 21) {
+        console.log("Dealer not taking card.....");
+        SUM_DEALER.innerHTML = "SUM = " + totalDealerCardValue;
+        displayDealerWin();
+        countBust();
+        disableButtons(); 
+    } else if (handValue > 21) {
+        console.log("Dealer not taking card.....");
+        SUM_DEALER.innerHTML = "SUM = " + totalDealerCardValue;
+        displayDealerBust();
+        countWin();
+        disableButtons(); 
+    } else {
         decideWinner();
+        disableButtons(); 
+        SUM_DEALER.innerHTML = "SUM = " + totalDealerCardValue;
     }
 }
-for (let i = 0; i < dealerHand.length; i++) {
-    console.log("+++",dealerHand[i]);
+
+// biar gamenya terulang lgi pas pencet tombol playagain
+function loadGame(){
+    location.reload();
+    dealHands();
 }
-// console.log(newCard);
+
+
+AMOUNT.addEventListener('input', beforeStart);
+BET.addEventListener('input', beforeStart);
+
+START_BUTTON.addEventListener('click', dealHands);
 HIT_BUTTON.addEventListener('click', hitPlayer);
 PASS_BUTTON.addEventListener('click', hitDealer);
+PLAY_AGAIN_BUTTON.addEventListener('click', loadGame);
 
-// shuffleDecks(1);
-dealHands();
+beforeStart();
 
-// value > 21 still win [done]
-// the hit card is not red [pas hit cuma kartu item yg keluar + itungannya kacau]
-// calcvalue cuma keitung stlh hit card
+
+
+// bikin saldo dan taruhan, pke label dan input
+// bikin kondisinya
+// alur: masukin saldo dan taruhan sblm main
+//      klo player menang, saldo = saldo+taruhan
+//      klo player kalah, saldo = saldo
