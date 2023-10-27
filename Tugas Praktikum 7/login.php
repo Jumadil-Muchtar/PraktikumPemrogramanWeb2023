@@ -1,17 +1,28 @@
 <?php
-// Menginisialisasi variabel
+session_start(); // Panggil session_start() hanya sekali di awal
+
 $host = "localhost";
 $user = "root";
 $pass = "";
 $db = "tugas7";
 $username = "";
 $password = "";
-$err = "";
+$error = "";
 
-// Menghubungkan ke database
 $koneksi = mysqli_connect($host, $user, $pass, $db);
 if (!$koneksi) {
     die("Tidak Bisa Terkoneksi Ke Database");
+}
+
+// Periksa apakah ada permintaan logout
+if (isset($_GET['logout'])) {
+    if (isset($_SESSION['user_role'])) {
+        // Hapus sesi dan arahkan ke halaman login
+        session_unset();
+        session_destroy();
+        header("Location: login.php");
+        exit();
+    }
 }
 
 if (isset($_POST['login'])) {
@@ -20,26 +31,45 @@ if (isset($_POST['login'])) {
 
     // Memeriksa apakah username dan password diisi
     if ($username == '' || $password == '') {
-        $err = "Silahkan Isi Semua Data";
+        $error = "Silahkan Isi Semua Data";
     } else {
         // Melakukan query untuk mencari username di database
         $sql1 = "SELECT * FROM admin WHERE username = '$username'";
         $q1 = mysqli_query($koneksi, $sql1);
         $r1 = mysqli_fetch_array($q1);
-        $n1 = mysqli_num_rows($q1);
 
-        if ($n1 < 1) {
-            $err = 'Username Tidak Ditemukan';
+        if (mysqli_num_rows($q1) < 1) {
+            $error = 'Username Tidak Ditemukan';
         } else if ($r1['password'] != $password) {
-            $err = 'Password Salah';
+            $error = 'Password Salah';
         } else {
-            // Jika username dan password benar, maka arahkan ke halaman index.php
-            // Anda juga perlu memulai sesi terlebih dahulu menggunakan session_start()
-            session_start();
-            $_SESSION['admin_username'] = $username;
-            header("location:index.php");
-            exit();
+            // Jika username dan kata sandi benar, maka arahkan ke halaman sesuai peran
+            $_SESSION['login'] = true;
+
+            // Tambahkan peran pengguna ke sesi berdasarkan awalan username
+            if (strpos($username, 'admin') === 0) {
+                $_SESSION['user_role'] = 'admin';
+                $_SESSION['username'] = $username;
+                header("Location: index.php"); // Jika awalan username adalah admin, arahkan ke halaman index.php
+                exit();
+            } elseif (strpos($username, 'user') === 0) {
+                $_SESSION['user_role'] = 'user';
+                $_SESSION['username'] = $username;
+                header("Location: index2.php"); // Jika awalan username adalah user, arahkan ke halaman index2.php
+                exit();
+            }
         }
+    }
+}
+
+// Verifikasi apakah admin sudah login
+if (isset($_SESSION['login']) && $_SESSION['login'] === true) {
+    if ($_SESSION['user_role'] === 'admin') {
+        header("Location: index.php");
+        exit();
+    } elseif ($_SESSION['user_role'] === 'user') {
+        header("Location: index2.php");
+        exit();
     }
 }
 ?>
@@ -82,9 +112,9 @@ if (isset($_POST['login'])) {
             <h2 class="card-title m-3">LOGIN</h2>
             <form action="" method="POST">
                 <?php
-                if ($err) {
-                    // Menampilkan pesan $error
-                    echo '<div class="alert alert-danger">' . $err . '</div>';
+                if ($error) {
+                    // Menampilkan pesan $erroror
+                    echo '<div class="alert alert-danger">' . $error . '</div>';
                 }
                 ?>
                 <div class="form-group">
@@ -107,7 +137,7 @@ if (isset($_POST['login'])) {
                 </div>
             </form>
             <p class="py-3">Tidak Punya Akun?
-                <a class="link-opacity-50-hover" href="register.php">Register Disini</a>
+                <a class="link-opacity-50-hover" href="register.php?from=login">Register Disini</a>
             </p>
         </div>
     </div>

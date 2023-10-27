@@ -1,4 +1,3 @@
---Query Database Tugas 7
 
 CREATE DATABASE tugas7;
 

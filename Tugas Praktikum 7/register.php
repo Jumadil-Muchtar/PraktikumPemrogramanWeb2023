@@ -12,8 +12,6 @@ if (!$koneksi) {
     die("Tidak Bisa Terkoneksi Ke Database");
 }
 
-
-
 if (isset($_POST["register"])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -40,10 +38,7 @@ if (isset($_POST["register"])) {
             }
         }
     }
-
-
 }
-
 ?>
 
 
@@ -87,7 +82,7 @@ if (isset($_POST["register"])) {
             <?php
             if ($error) {
                 echo '<div class="alert alert-danger" role="alert">' . $error . '</div>';
-                header("refresh:3;url=register.php"); // 5 Detik Refresh 
+                header("refresh:3;url=register.php"); // 3 Detik Refresh 
             }
             ?>
             <form action="" method="POST">

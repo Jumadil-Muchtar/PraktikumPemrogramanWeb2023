@@ -1,4 +1,30 @@
 <?php
+session_start();
+// Periksa apakah ada permintaan logout
+if (isset($_GET['logout'])) {
+    if ($_SESSION['user_role'] === 'admin') {
+        // Hapus sesi dan arahkan ke halaman login
+        $_SESSION['admin_logout'] = true;
+        session_unset();
+        session_destroy();
+        header("Location: login.php");
+        exit();
+    }
+}
+
+if (isset($_SESSION['login']) && $_SESSION['login'] === true) {
+    if ($_SESSION['user_role'] === 'admin') {
+        $username = $_SESSION['username'];
+    } else {
+        // Pengguna dengan peran selain admin tidak diizinkan mengakses halaman ini
+        header("Location: index2.php"); // Alihkan pengguna ke halaman user
+        exit();
+    }
+} else {
+    // Pengguna yang belum login akan diarahkan ke halaman login
+    header("Location: login.php");
+    exit();
+}
 // Konfigurasi Koneksi
 $host = "localhost";
 $user = "root";
@@ -110,7 +136,6 @@ if (isset($_POST["simpan"])) {
     }
 }
 // -----------------------------------------------------------------------------------------------------------------------------
-
 ?>
 
 <!DOCTYPE html>
@@ -147,6 +172,11 @@ if (isset($_POST["simpan"])) {
             box-shadow: 0 0 10px rgba(0, 0, 0, 1);
             margin: 30px;
         }
+
+        h1 {
+            font-size: 30px;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -154,6 +184,10 @@ if (isset($_POST["simpan"])) {
     <div class="container">
         <!-------------------------------------------------- FORM ---------------------------------------------->
         <div class="card">
+            <h1>
+                Welcome My
+                <?php echo $username ?> !
+            </h1>
             <div class="card-header bg-info fw-bold">
                 Buat / Edit Data
             </div>
@@ -295,6 +329,10 @@ if (isset($_POST["simpan"])) {
                     </tbody>
                 </table>
             </div>
+            <div class="card-footer">
+                <a href="index.php?logout=1" class="btn btn-danger">Logout</a>
+            </div>
+
         </div>
         <!--------------------------------------------------------------------------------------------------------------->
     </div>
