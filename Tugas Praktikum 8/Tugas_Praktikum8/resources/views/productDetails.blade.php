@@ -7,7 +7,6 @@
 </head>
 <body>
     <h1>Detail Produk</h1>
-
         @foreach($reads as $read)
             <p>========================================================</p>
             <p>Kode Produk : {{$read -> productCode}}</p>

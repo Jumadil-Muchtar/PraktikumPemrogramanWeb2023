@@ -11,57 +11,19 @@ class productController extends Controller
         return view('product', compact('reads'));
     }
     
-    function readMotorcycles(){
+    public function detailData($product) {
         $reads = DB::table('products')
-        ->where('productline','=','Motorcycles')
-        ->get(); //compact untuk menyimpan data2 ke array
-        return view('productMotorcycles', compact('reads'));
-    }
-    function readClassicCars(){
-        $reads = DB::table('products')
-        ->where('productline','=','Classic Cars')
-        ->get(); //compact untuk menyimpan data2 ke array
-        return view('productClassicCars', compact('reads'));
-    }
-    function readPlanes(){
-        $reads = DB::table('products')
-        ->where('productline','=','Planes')
-        ->get(); //compact untuk menyimpan data2 ke array
-        return view('productPlanes', compact('reads'));
-    }
-    function readTrains(){
-        $reads = DB::table('products')
-        ->where('productline','=','Trains')
-        ->get(); //compact untuk menyimpan data2 ke array
-        return view('productTrains', compact('reads'));
-    }
-    function readShips(){
-        $reads = DB::table('products')
-        ->where('productline','=','Ships')
-        ->get(); //compact untuk menyimpan data2 ke array
-        return view('productShips', compact('reads'));
-    }
-    function readVintageCars(){
-        $reads = DB::table('products')
-        ->where('productline','=','Vintage Cars')
-        ->get(); //compact untuk menyimpan data2 ke array
-        return view('productVintageCars', compact('reads'));
-    }
-    function readTrucksBuses(){
-        $reads = DB::table('products')
-        ->where('productline','=','Trucks and Buses')
-        ->get(); //compact untuk menyimpan data2 ke array
-        return view('productTrucksBuses', compact('reads'));
-    }
-    
-    public function detailData($productCode) {
-        // $product = DB::table('products')->find($productCode);
-        // $product = DB::table('products')->where('productCode','=', $productCode)->first();
-        $reads = DB::table('products')
-        ->where('productCode','=',$productCode)
+        ->where('productCode','=',$product)
         ->get();
-    
-        return view('detailProduct', compact('reads'));
+        if ($reads->isEmpty()) {
+            $reads = DB::table('products')
+            ->where('productLine','=',$product)
+            ->get();
+            return view('detailproductLines', compact('reads'));
+        } else {
+            return view('productDetails', compact('reads'));
+
+        }
     }
     
 }

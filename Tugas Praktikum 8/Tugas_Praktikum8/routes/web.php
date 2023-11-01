@@ -13,12 +13,7 @@ use App\Http\Controllers\productController;
 |
 */
 Route::get('/product',[productController::class, 'readAll']);
-Route::get('/product/Motorcycles',[productController::class, 'readMotorcycles']);
-Route::get('/product/ClassicCars',[productController::class, 'readClassicCars']);
-Route::get('/product/Planes',[productController::class, 'readPlanes']);
-Route::get('/product/Trains',[productController::class, 'readTrains']);
-Route::get('/product/Ships',[productController::class, 'readShips']);
-Route::get('/product/TrucksBuses',[productController::class, 'readTrucksBuses']);
-Route::get('/product/VintageCars',[productController::class, 'readVintageCars']);
-Route::get('/product/{productCode}',[productController::class, 'detaildata'])->name('readDetail');
+
+// Ketik Di url "%20" sebagai pengganti spasi,Contoh : /product/Classic%20Cars
+Route::get('/product/{detailProduct}',[productController::class, 'detailData'])->name('detailProduct'); 
 
