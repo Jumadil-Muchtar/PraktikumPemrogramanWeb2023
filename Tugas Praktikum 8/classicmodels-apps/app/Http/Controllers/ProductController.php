@@ -25,8 +25,7 @@ class ProductController extends Controller
     {
         $products = Product::where('productLine', $productLine)->get();
         return view('products-by-productline', [
-            'products' => $products,
-            'productLine' => $productLine,
+            'products' => $products
         ]);
     }
 }

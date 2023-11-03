@@ -3,7 +3,7 @@
 @section('container')
 <div class="container">
     <div data-aos="zoom-in-up">
-        <h1 class="mx-auto">Data Product Line</h1>
+        <h1>Data Product Line</h1>
         <table class="table table-bordered table-striped mx-auto" style="width: 70rem;">
             <thead>
                 <tr>

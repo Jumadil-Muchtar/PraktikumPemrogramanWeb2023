@@ -14,7 +14,7 @@
             <hr class="border border-dark border-2 opacity-50">
           </div>
         <div class="card-footer bg-secondary">
-            <a href="/product" class="btn btn-danger"><i class="fa-solid fa-backward" style="color: #ffffff;"></i></a>
+            <a href="/product" class="btn btn-danger"><i class="fa-solid fa-arrow-left fa-lg" style="color: #ffffff;"></i></i></a>
         </div>
     </div>
 @endsection
