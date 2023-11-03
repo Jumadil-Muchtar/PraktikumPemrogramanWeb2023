@@ -11,6 +11,7 @@ class OrderController extends Controller
     {
         return view("order", [
             "order" => Order::all(),
+            'title' => 'Orders'
         ]);
     }
 }

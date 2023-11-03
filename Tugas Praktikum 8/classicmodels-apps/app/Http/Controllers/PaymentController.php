@@ -11,6 +11,7 @@ class PaymentController extends Controller
     {
         return view("payment", [
             "payment" => Payment::all(),
+            'title' => 'Payments'
         ]);
     }
 }

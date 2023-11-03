@@ -10,7 +10,8 @@ class CustomerController extends Controller
     public function showCustomers()
     {
         return view('customers', [
-            'customer' => Customer::all()
+            'customer' => Customer::all(),
+            'title' => 'Customers'
         ]);
     }
 }

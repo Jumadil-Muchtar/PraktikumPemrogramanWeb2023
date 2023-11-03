@@ -1,33 +1,33 @@
 @extends('layouts.main')
 
 @section('container')
-<div class="container mt-5 p-3">
+<div class="container">
     <div data-aos="zoom-in-up">
-        <h1 class="mx-auto">Data Offices</h1>
+        <h1 class="mb-3">Data Offices</h1>
         <table class="table table-bordered table-striped mx-auto" style="width: 70rem;">
             <thead>
                 <tr>
-                    <th scope="col">Office Code</th>
-                    <th scope="col">City</th>
-                    <th scope="col">Address1</th>
-                    <th scope="col">Address2</th>
-                    <th scope="col">Phone</th>
-                    <th scope="col">Country</th>
-                    <th scope="col">Postal Code</th>
-                    <th scope="col">Territory</th>
+                    <th class="text-center align-middle" scope="col">Office Code</th>
+                    <th class="text-center align-middle" scope="col">City</th>
+                    <th class="text-center align-middle" scope="col">Address1</th>
+                    <th class="text-center align-middle" scope="col">Address2</th>
+                    <th class="text-center align-middle" scope="col">Phone</th>
+                    <th class="text-center align-middle" scope="col">Country</th>
+                    <th class="text-center align-middle" scope="col">Postal Code</th>
+                    <th class="text-center align-middle" scope="col">Territory</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($offices as $office)
                 <tr>
-                    <th scope="row">{{ $office->officeCode }}</th>
-                    <td>{{ $office->city }}</td>
-                    <td>{{ $office->addressLine1 }}</td>
-                    <td>{{ $office->addressLine2 }}</td>
-                    <td>{{ $office->phone }}</td>
-                    <td>{{ $office->country }}</td>
-                    <td>{{ $office->postalCode }}</td>
-                    <td>{{ $office->territory }}</td>
+                    <th class="text-center align-middle" scope="row">{{ $office->officeCode }}</th>
+                    <td class="text-center align-middle">{{ $office->city }}</td>
+                    <td class="text-center align-middle">{{ $office->addressLine1 }}</td>
+                    <td class="text-center align-middle">{{ $office->addressLine2 }}</td>
+                    <td class="text-center align-middle">{{ $office->phone }}</td>
+                    <td class="text-center align-middle">{{ $office->country }}</td>
+                    <td class="text-center align-middle">{{ $office->postalCode }}</td>
+                    <td class="text-center align-middle">{{ $office->territory }}</td>
                 </tr>
                 @endforeach
             </tbody>

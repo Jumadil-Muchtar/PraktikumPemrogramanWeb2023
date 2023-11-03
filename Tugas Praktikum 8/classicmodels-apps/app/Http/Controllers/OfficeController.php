@@ -11,6 +11,7 @@ class OfficeController extends Controller
     {
         return view("office", [
             "offices" => Office::all(),
+            'title' => 'Offices'
         ]);
     }
 }

@@ -12,7 +12,9 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', [
+        "title" => "Home"
+    ]);
 });
 Route::get('/product', [ProductController::class, 'showAllProduct']);
 Route::get('/product/details/{id}', [ProductController::class, 'showByProductCode']);

@@ -11,6 +11,7 @@ class ProductLineControllers extends Controller
     {
         return view("productLine", [
             "productLine" => Productline::all(),
+            'title' => 'Product Line'
         ]);
     }
 }

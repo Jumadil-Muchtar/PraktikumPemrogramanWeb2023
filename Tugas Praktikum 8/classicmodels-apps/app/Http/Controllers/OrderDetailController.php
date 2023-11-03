@@ -11,6 +11,7 @@ class OrderDetailController extends Controller
     {
         return view("orderDetail", [
             "orderdetail" => Orderdetail::all(),
+            'title' => 'Orders Details'
         ]);
     }
 }

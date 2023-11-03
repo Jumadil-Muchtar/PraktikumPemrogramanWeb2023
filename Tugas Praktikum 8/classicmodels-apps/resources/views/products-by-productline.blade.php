@@ -5,12 +5,25 @@
     @foreach ($products as $product)
     <div class="col-md-4 mb-3" data-aos="zoom-in-up">
         <div class="product-card card h-100 p-3">
-            <img src="/images/pic1.jpg" class="card-img-top" alt="...">
+            @if ($product->productLine === 'Classic Cars')
+                <img src="{{ asset('images/Classic Cars.jpg') }}" alt="Classic Cars Image">
+            @elseif ($product->productLine === 'Motorcycles')
+                <img src="{{ asset('images/Motorcycles.jpg') }}" class="card-img-top" alt="Motorcycles Image">
+            @elseif ($product->productLine === 'Trains')
+                <img src="{{ asset('images/Trains.jpg') }}" class="card-img-top" alt="Trains Image">
+            @elseif ($product->productLine === 'Trucks and Buses')
+                <img src="{{ asset('images/Trucks and Buses.jpg') }}" class="card-img-top" alt="Trucks and Buses Image">
+            @elseif ($product->productLine === 'Ships')
+                <img src="{{ asset('images/Ships.jpg') }}" class="card-img-top" alt="Ships Image">
+            @elseif ($product->productLine === 'Planes')
+                <img src="{{ asset('images/Planes.jpg') }}" class="card-img-top" alt="Planes Image">
+            @elseif ($product->productLine === 'Vintage Cars')
+                <img src="{{ asset('images/Vintage Cars.jpg') }}" class="card-img-top" alt="Vintage Cars Image">
+            @endif
             <div class="card-body">
-                <h5 class="card-title fw-700">{{ $product->productName }} ( {{ $product->productLine}} )</h5>
+                <h5 class="card-title fw-700">{{ $product->productName }} ( {{ $product->productLine }} )</h5>
                 <p class="card-text">{{ substr($product->productDescription, 0, 100) }}.....</p>
                 <p class="card-text">Vendor : {{ $product->productVendor }}</p>
-
             </div>
             <div class="card-footer d-flex justify-content-between bg-secondary text-light">
                 <div>

@@ -11,6 +11,7 @@ class EmployeeController extends Controller
     {
         return view("employee", [
             "employee" => Employee::all(),
+            'title' => 'Employees'
         ]);
     }
 }

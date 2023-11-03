@@ -10,14 +10,18 @@ class ProductController extends Controller
     public function showAllProduct()
     {
         return view('product', [
-            "products" => Product::all()
+            "products" => Product::all(),
+            "title" => "Produk"
         ]);
     }
 
     public function showByProductCode($productCode)
     {
         $product = Product::where('productCode', $productCode)->first();
-        return view('products', ['product' => $product]);
+        return view('products', [
+            'product' => $product,
+            'title' => 'Detail Produk'
+        ]);
     }
 
 
@@ -25,7 +29,9 @@ class ProductController extends Controller
     {
         $products = Product::where('productLine', $productLine)->get();
         return view('products-by-productline', [
-            'products' => $products
+            'products' => $products,
+            'title' => 'Jenis Produk',
+            'productLine' => $productLine
         ]);
     }
 }
