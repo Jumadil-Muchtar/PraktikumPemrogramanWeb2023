@@ -14,6 +14,9 @@
             @elseif ($product->productLine === 'Trucks and Buses')
                 <img src="images/Trucks and Buses.jpg" class="card-img-top" alt="Trucks and Buses Image">
             @elseif ($product->productLine === 'Ships')
+            @elseif ($product->productLine === 'Trucks AND Buses')
+                <img src="images/Trucks and Buses.jpg" class="card-img-top" alt="Trucks and Buses Image">
+            @elseif ($product->productLine === 'Ships')
                 <img src="images/Ships.jpg" class="card-img-top" alt="Ships Image">
             @elseif ($product->productLine === 'Planes')
                 <img src="images/Planes.jpg" class="card-img-top" alt="Planes Image">
