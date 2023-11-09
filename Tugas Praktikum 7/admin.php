@@ -14,7 +14,6 @@
         $verify = $_SESSION['verify'];
     }
     if($verify === true){
-        
         $sudahAdmin = true;
         $_SESSION['verifyCRUD'] = $sudahAdmin;
         echo "<a href=insert.php><button>Insert Data</button></a>";

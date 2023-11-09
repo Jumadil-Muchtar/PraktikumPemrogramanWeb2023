@@ -22,7 +22,7 @@
     </form>
     <?php
         session_start();
-        session_unset();
+        // session_unset();
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (isset($_POST['username']) && isset($_POST['password'])) {
 
