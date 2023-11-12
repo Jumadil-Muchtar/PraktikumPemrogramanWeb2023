@@ -1,0 +1,81 @@
+.navbar-brand {
+    font-family: Bodoni Moda;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.nav-link {
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.search {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 200;
+}
+/* 
+domine 400 - 700
+inter 200 300 400 600
+*/
+
+h1 {
+    font-family: Domine;
+    font-size: 44px;
+    font-weight: 700;
+    color: black;
+}
+
+h2 {
+    font-family: Domine;
+    font-size: 32px;
+    font-weight: 600;
+    color: black;
+}
+h3 {
+    font-family: Domine;
+    font-size: 32px;
+    font-weight: 600;
+    color: white;
+}
+
+h4 {
+    font-family: Domine;
+    font-size: 24px;
+    font-weight: 600;
+    color: black;
+}
+
+h5 {
+    font-family: Domine;
+    font-size: 18px;
+    font-weight: 700;
+}
+p {
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 400;
+    color: black;
+}
+
+.button {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.card-text {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+    line-height: 1.0;
+}
+
+td {
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.8;
+}
