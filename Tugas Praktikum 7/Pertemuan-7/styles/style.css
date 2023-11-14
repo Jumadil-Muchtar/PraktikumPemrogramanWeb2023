@@ -1,0 +1,337 @@
+body{
+    background-color: #1c1e33;
+    justify-content: center;
+    align-items: center;
+}
+
+*{
+    font-family: Tahoma;
+}
+
+
+
+
+.container-login{
+    color: white;
+    width:50%;
+    text-align: center;
+    margin:auto;
+    background-color: #25273eb4;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+li{
+    list-style: none;
+}
+
+.container-login input{
+    color: white;
+    margin: 10px;
+    padding: 8px;
+    border-style: solid;
+    border-width:2px;
+    border-radius: 18px;
+    border-color: #ee3a57;
+    background-color: #25273eb4;
+}
+.container-login input::placeholder{
+    color: #ADADAD;
+    text-align: center;
+    
+}
+
+.container-login button{
+    font-weight: bold;
+    background-color: #ee3a57;
+    padding: 10px;
+    color: white;
+    border-style: none;
+    width: 200px;
+    border-radius: 10px;
+}
+.container-login button:hover{
+    background-color: rgb(161, 2, 2);
+    cursor: pointer;
+}
+
+.container-login a{
+    text-decoration: none;
+    background-color: blue;
+    padding: 10px;
+    color: white;
+    border-style: none;
+    width: 100px;
+    border-radius: 10px;
+    font-size: 12px;
+    margin-left: 40px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.container-login a:hover{
+    background-color: rgb(3, 3, 158);
+}
+
+
+
+
+
+.container-register{
+    color: white;
+    width:50%;
+    text-align: center;
+    margin:auto;
+    background-color: #25273eb4;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.container-register input{
+    color: white;
+    margin: 10px;
+    padding: 12px;
+    border-style: solid;
+    border-width:2px;
+    border-radius: 18px;
+    border-color: #ee3a57;
+    background-color: #25273eb4;
+    width: 50%
+}
+.container-register input::placeholder{
+    color: #ADADAD;
+    text-align: center;
+    
+}
+
+.container-register h1{
+    text-align: center;
+}
+
+.container-register button{
+    font-weight: bold;
+    background-color: #ee3a57;
+    padding: 10px;
+    color: white;
+    border-style: none;
+    width: 300px;
+    border-radius: 10px;
+}
+.container-register button:hover{
+    background-color: rgb(161, 2, 2);
+    cursor: pointer;
+}
+
+
+
+
+
+.container-index{
+    color: white;
+    width:80%;
+    margin:auto;
+    background-color: #25273eb4;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.container-index #logout{
+    text-align: right;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #ee3a57;
+    padding: 10px;
+    color: white;
+    border-style: none;
+    width: 300px;
+    border-radius: 10px;
+}
+.container-index #logout:hover{
+    background-color: rgb(161, 2, 2);
+    cursor: pointer;
+}
+.container-index #tambah{
+    text-align: right;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: blue;
+    padding: 10px;
+    color: white;
+    border-style: none;
+    width: 300px;
+    border-radius: 10px;
+}
+
+.container-index #tambah:hover{
+    background-color: rgb(3, 3, 158);
+}
+
+.container-index #cari{
+    font-weight: bold;
+    background-color: blue;
+    padding: 10px;
+    color: white;
+    border-style: none;
+    width: 100px;
+    border-radius: 10px;
+}
+.container-index #cari:hover{
+    background-color: rgb(3, 3, 158);
+    cursor: pointer;
+}
+
+.container-index #keyword{
+    color: white;
+    margin: 10px;
+    padding: 12px;
+    border-style: solid;
+    border-width:2px;
+    border-radius: 18px;
+    border-color: blue;
+    background-color: #25273eb4;
+    width: 30%
+}
+.container-register input::placeholder{
+    color: #ADADAD;
+    text-align: center;
+    
+}
+
+.container-index #ubah{
+    text-align: right;
+    text-decoration: none;
+    background-color: blue;
+    padding: 5px;
+    color: white;
+    border-style: none;
+    width: 300px;
+    border-radius: 5px;
+}
+.container-index #hapus{
+    text-align: right;
+    text-decoration: none;
+    background-color: #ee3a57;
+    padding: 5px;
+    color: white;
+    border-style: none;
+    width: 300px;
+    border-radius: 5px;
+}
+.container-index #hapusUser{
+    text-align: right;
+    text-decoration: none;
+    background-color: #ee3a57;
+    padding: 5px;
+    color: white;
+    border-style: none;
+    width: 300px;
+    border-radius: 5px;
+}
+
+
+
+
+.container-tambah{
+    color: white;
+    width:50%;
+    margin:auto;
+    background-color: #25273eb4;
+    padding: 20px;
+    border-radius: 15px;
+}
+.container-tambah h1{
+    text-align: center;
+}
+.container-tambah input{
+    color: white;
+    margin: 10px;
+    padding: 12px;
+    border-style: solid;
+    border-width:2px;
+    border-radius: 10px;
+    border-color: #ee3a57;
+    background-color: #25273eb4;
+    width: 80%;
+}
+
+.container-tambah #gambar{
+    text-align: right;
+    text-decoration: none;
+    background-color: blue;
+    padding: 5px;
+    color: white;
+    border-style: none;
+    width: 300px;
+    border-radius: 5px;
+}
+.container-tambah #gambar:hover{
+    background-color: rgb(3, 3, 158);
+}
+
+.container-tambah #tambah{
+    text-decoration: none;
+    background-color: #ee3a57;
+    padding: 5px;
+    color: white;
+    border-style: none;
+    width: 100px;
+    border-radius: 5px;
+}
+.container-tambah #tambah:hover{
+    background-color: rgb(161, 2, 2);
+    cursor: pointer;
+}
+
+
+
+
+
+.container-ubah{
+    color: white;
+    width:50%;
+    margin:auto;
+    background-color: #25273eb4;
+    padding: 20px;
+    border-radius: 15px;
+}
+.container-ubah h1{
+    text-align: center;
+}
+.container-ubah input{
+    color: white;
+    margin: 10px;
+    padding: 12px;
+    border-style: solid;
+    border-width:2px;
+    border-radius: 10px;
+    border-color: #ee3a57;
+    background-color: #25273eb4;
+    width: 80%;
+}
+
+.container-ubah #gambar{
+    text-align: right;
+    text-decoration: none;
+    background-color: blue;
+    padding: 5px;
+    color: white;
+    border-style: none;
+    width: 300px;
+    border-radius: 5px;
+}
+.container-ubah #gambar:hover{
+    background-color: rgb(3, 3, 158);
+}
+
+.container-ubah #ubah{
+    text-decoration: none;
+    background-color: #ee3a57;
+    padding: 5px;
+    color: white;
+    border-style: none;
+    width: 100px;
+    border-radius: 5px;
+}
+.container-ubah #ubah:hover{
+    background-color: rgb(161, 2, 2);
+    cursor: pointer;
+}
