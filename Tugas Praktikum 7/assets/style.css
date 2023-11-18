@@ -1,0 +1,19 @@
+/* body {
+    background-image: url(bg.png);
+    background-size: auto;
+
+    position: absolute;
+    
+
+} */
+
+/* #modalUbah {
+    padding: 10px;
+} */
+
+.btn-logout {
+    background-color: red; 
+    /* color: white;  */
+    /* text-decoration: none; */
+    /* border-radius: 8px; */
+}

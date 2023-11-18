@@ -1,0 +1,71 @@
+crud
+3 inputan -> disimpan di php
+buat db sm tabel di phpmyadmin
+
+login pke session -> admin sm mhs
+    mhs cuma bisa lihat data sendiri 
+    admin bisa lihat semua, bisa edit dkk, tampil data seluruh mhs
+
+3 session - 1 utk username, 1 pass, 1 role
+
+
+1. Buatlah sebuah website sederhana yang dapat melakukan penginputan, menampilkan, mengedit, dan mendelete data mahasiswa,(CRUD). 
+2. Inputan terdiri atas 3 yaitu nama, nim dan prodi (kalau mau lebih dari 3 juga boleh).
+3. Data disimpan dan diakses dalam database mySql
+4. Website memiliki fitur login dengan 2 role yaitu admin dan mahasiswa. 
+Mahasiswa hanya bisa melihat data mahasiswa. 
+Admin dapat melihat, menginput, mengedit, dan menghapus data mahasiswa
+Bonus: File yang digunakan hanya terdiri 2 file (3 file kalau pakai registrasi)
+File login.php untuk mengatur login
+File index.php untuk membuat, menampilkan, mengupdate dan mendelete data
+Tambahkan fitur lain seperti logout, halaman registrasi, atau hal lain sekreatif kalian
+
+ada 3 database
+- utk nyimpen data mahasiswa > id, nim, nama, prodi
+- utk nyimpen akun sbg admin
+- utk nyimpen akun sbg mhs
+
+alur :
+    form login -> ada akun -> input username pass
+               -> gada akun -> regis
+    form regis -> sbg mhs -> input nim, nama, username, pass, repass
+               -> sbg admin -> input email, nama, username, pass, repass
+    home -> sbg mhs -> tampil data mahasiswa
+         -> sbg adm -> tampil data dan crud
+        
+registrasi -> sbg mhs -> input data, berhasil -> masuk form login
+           -> sbg adm -> input data, berhasil -> masuk form login
+berhasil : bikinin kondisi biar cocok inputannya
+!! masukin inputan2 ke db_data_mhs sm db_akun_mhs
+
+pas login -> klo sbg mhs -> tampilan mahasiswa
+          -> klo sbg adm -> tampilan admin
+!!username & pass cocokin di db datamahasiswa > klo ada yg cocok > login mhs
+!!username & pass cocokin di db akunadmin > klo ada yg cocok > login admin
+
+datamahasiswa
+akunadmin
+
+29/10 01.03
+regisadm, akun admin masuk database [done]
+regismhs -> emptyform
+
+
+session => mekanisme penyimpanan informasi ke dlm variabel agar bisa
+digunakan di >1 halaman, informasi disimpan di server
+1 sesi -> sampai browser ditutup/restart laptop
+
+ceklogin 
+    cek isset button
+    ambil data user pass
+    cek username ada ga di db -> ada, cek pass
+                                 gada, failed username
+    cek pass, cocok -> masuk ke home
+    cek pass
+        -cek akunadmin -> masuk ke homeadm
+        -cek datamahasiswa -> masuk ke homemhs
+
+
+login mhs
+tambah data -> duplicat username
+ubah data
