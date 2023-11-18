@@ -23,7 +23,7 @@
       @endforeach
    </ul> --}}
 
-   <h2 style="font-size: 36px;">Products of Classic Models</h2>
+   <h2>{{ $intro }}</h2>
    <div class="row row-cols-2 row-cols-md-2 g-2" style="margin-bottom: 20px">
       @foreach ($item as $product)
          <div class="col">

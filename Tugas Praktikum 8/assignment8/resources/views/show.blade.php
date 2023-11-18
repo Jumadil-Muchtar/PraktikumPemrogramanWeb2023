@@ -42,13 +42,6 @@
     
    
 
-    {{-- <h5 class="mt-4" style="font-size: 20px;">Nama Produk : {{ $product->productName }}</h5>
-    <p>Jenis Produk : {{ $product->productLine }}</p>
-    <p>Skala Produk : {{ $product->productScale }}</p>
-    <p>Penjual Produk : {{ $product->productVendor }}</p>
-    <p>Deskripsi : {{ $product->productDescription }}</p>
-    <p>Stok Barang : {{ $product->quantityInStock }}</p>
-    <p>Harga Beli : {{ $product->buyPrice }}</p>
-    <p>Harga Eceran Tertinggi : {{ $product->MSRP }}</p> --}}
+    
     <a href="/product" class="btn btn-secondary button" style="color: #fff; margin-top: 10px;">Back to products</a>
 @endsection

@@ -14,26 +14,17 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-// Route localhost/product akan menampilkan seluruh data productName, productLine, productVendor dan quantityInStock pada tabel produtcs
-// Route localhost/product/{productLine} akan menampilkan seluruh produk yang kolom productLine-nya sama dengan yang dimasukan
+
+// get() digunakan untuk mengatur rute yang akan menangani permintaan GET ke URL tertentu
+// Parameter pertama adalah URL yang akan ditangani
+// parameter kedua adalah array yang berisi nama kelas kontroler dan metode yang akan menangani permintaan tersebut
+// name() untuk memberikan nama pada setiap rute
 
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/home', function () {
-//     return view('home', [
-//         "title" => "Home",
-//         "welcome" => "Selamat Datang di Classic Models"
-//     ]);
-// });
-
-// Route::get('/product', function () {
-//     return view('product', [
-//         "title" => "Product"
-//     ]);
-// });
 Route::get('/home', function () {
     return view('home', [
         "title" => "Home",
@@ -41,16 +32,14 @@ Route::get('/home', function () {
     ]);
 });
 
-Route::get('/product', function () {
-    return view('product', [
-        "title" => "Product",
-        "intro" => "Products of Classic Models"
-    ]);
-});
-
+// route -> class
+// :: mengambil method static
+// get method request
 Route::get('/product', [ProductController::class, 'index']);
+
 Route::get('/products/search', [ProductController::class, 'search'])->name('products.search');
 
+// {productName} -> jdi parameter di fungsi showProduct
 Route::get('/products/{productName}', [ProductController::class, 'showProduct'])->name('products.show');
 
 Route::get('/productlines', function () {
@@ -58,6 +47,3 @@ Route::get('/productlines', function () {
         "title" => "Product Lines"
     ]);
 });
-
-// title halaman
-// show product -> value desc & harga ecer

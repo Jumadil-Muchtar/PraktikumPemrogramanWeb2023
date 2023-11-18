@@ -79,3 +79,10 @@ td {
     font-weight: 400;
     line-height: 1.8;
 }
+
+.pl {
+    font-family: inter; 
+    font-size: 14px; 
+    font-weight: 500;
+    color: black;
+}

@@ -9,7 +9,7 @@
          </div>
       </div>
       <form class="d-flex mt-3 search" role="search" action="{{ route('products.search') }}" method="GET">
-         <input class="form-control me-2" type="search" placeholder="Search by Product Lines" aria-label="Search">
+         <input class="form-control me-2" type="search" placeholder="Search by Product Lines" aria-label="Search" name="productLine">
          <button class="btn btn-outline-secondary" type="submit">Search</button>
       </form>
    </div>
