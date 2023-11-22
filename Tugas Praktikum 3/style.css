@@ -1,0 +1,119 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "poppins", sans-serif;
+}
+
+.collapse {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 7%;
+}
+
+.navbar-brand {
+  font-weight: 1000;
+  padding: 0 7%;
+  color: #fff;
+}
+
+.logo {
+  padding: 0 0.5rem;
+}
+
+.d-flex {
+  padding: 0 7%;
+}
+iframe {
+  float: right;
+  padding: 3rem 0.5rem;
+  background-color: #fff;
+}
+.cart {
+  background-color: #fff;
+  padding: 3rem 0;
+}
+
+.container {
+  background-color: #fff;
+}
+
+footer {
+  background-color: #bb2525;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+footer .socials {
+  padding: 1rem 0;
+}
+
+footer .socials a {
+  color: #ffffff;
+  margin: 1rem;
+}
+
+footer .socials a:hover {
+  color: #eb4b4b;
+}
+
+footer .credit a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+footer .credit p {
+  color: #ffffff;
+}
+
+.btn {
+  padding: 1.1em 2em;
+  background: none;
+  border: 2px solid #fff;
+  font-size: 15px;
+  color: #131313;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  border-radius: 12px;
+  background-color: #ecd448;
+  font-weight: bolder;
+  box-shadow: 0 2px 0 2px #000;
+}
+
+.btn:before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 120%;
+  background-color: #ffffff;
+  top: 50%;
+  transform: skewX(30deg) translate(-150%, -50%);
+  transition: all 0.5s;
+}
+
+.btn:hover {
+  background-color: #4cc9f0;
+  color: #fff;
+  box-shadow: 0 2px 0 2px #0d3b66;
+}
+
+.btn:hover::before {
+  transform: skewX(30deg) translate(150%, -50%);
+  transition-delay: 0.1s;
+}
+
+.btn:active {
+  transform: scale(0.9);
+}
