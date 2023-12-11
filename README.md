@@ -8,7 +8,7 @@ Untuk pengumpulan tugas praktikum, silahkan ikuti langkah berikut.
 3. Buka folder/repository PraktikumPemrogramanWeb2023 (ditandai dengan didalamnya terdapat folder bernama .git)
 4. Buka folder tersebut menggunakan Command Prompt.
 5. Silahkan berpindah ke branch masing-masing (ketikkan git checkout nim_anda)
-6. Salin tugas praktikum Anda ke folder praktikum_n (sesuai dengan tugas praktikum keberapa yang ingin dikumpulkan).
+6. Salin tugas praktikum Anda ke folder praktikum_n (sesuai dengan tugas praktikum keberapa yang ingin dikumpulkan) dan jangan lupa untuk menghapus file info.text.
 7. Silahkan kirim file tersebut ke repositori kalian yang ada di github.
 8. Setelah itu, lakukan pull request kepada repositori ini.
 

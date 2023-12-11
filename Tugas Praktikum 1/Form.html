@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Registrasi Pendaftaran</title>
+</head>
+<body>
+    <h1>Form Registrasi Pendaftaran </h1>
+    <hr><hr>
+    <h2>Identitas Diri</h2>
+    <form>
+        <label for="email">
+            Email :<br>
+        </label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="nama_depan">
+            <br><br>Nama Depan :<br>
+        </label>
+        <input type="text" id="nama_depan" name="nama_depan" required>
+
+        <label for="nama_belakang">
+            <br><br>Nama Belakang :<br>
+        </label>
+        <input type="text" id="nama_belakang" name="nama_belakang" required>
+
+        <label for="tgl_lahir">
+            <br><br>Tanggal Lahir<br>
+        </label>
+        <input type="date" id="tgl_lahir" name="tgl_lahir" required>
+
+        <label>
+            <br><br>Jenis Kelamin<br>
+        </label>
+
+        <label for="male">Pria</label>
+        <input type="radio" id="male" name="gender" value="Pria" required><br>
+
+        <label for="female">Perempaun</label>
+        <input type="radio" id="female" name="gender" value="Perempuan" required>
+        
+        <label for="no_tlp">
+            <br><br>Nomor Telepon :<br>
+        </label>
+        <input type="number" id="no_tlp" name="no_tlp">
+
+        <label for="alamat_rmh">
+            <br><br>Alamat Rumah :<br>
+            <textarea name="alamat_rmh"></textarea>
+
+        </label>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
