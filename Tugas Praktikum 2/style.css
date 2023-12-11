@@ -1,0 +1,123 @@
+*, html{
+    margin: 0;
+}
+
+.navbar{
+    background-color:rgb(252, 114, 59);
+    width: 100%;
+    height: 65px;
+    position: fixed;
+}
+
+.ul-navbar{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.li-navbar{
+    color: white;
+    padding: 15px;
+    margin: 10px;
+    font-size: medium;
+}
+
+.content-1{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.content-1 p{
+    padding-top: 65px;
+    width: 70%;
+    text-align: justify;
+    font-family: Calibri;
+}
+
+.content-2 img{
+    max-width: 100%;
+    width: 400px;
+    height: auto;
+}
+
+.section-content-2{
+    padding: 5rem;
+    margin-top: -5rem;
+    margin-bottom: -4rem;
+}
+
+.content-2{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    justify-content: center;
+    align-content: center;
+}
+.gambar{
+    text-align: center;
+}
+
+a:link{
+    color: white;
+}
+
+a:visited{
+    color: white;
+}
+
+a:hover{
+    color: black;
+}
+
+.content-3{
+    background-color: gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    bottom: 0;
+}
+
+.content-3-ayam {
+    margin: 10px;
+    list-style-type: none;
+    margin-left: 50px;
+    padding: 0;
+}
+
+.ul-unhas p{
+    color: white;
+}
+.Unhas{
+    width: 30px;
+    height: auto;
+    padding: 0;
+    justify-content: center;
+}
+
+.content-3-contact p{
+    margin: 10px;
+    list-style-type: none;
+    margin-right: 50px;
+    padding: 0;
+    font-size:small;
+    font-family:Calibri, sans-serif;
+}
+
+@media (max-width: 768px) {
+    .section-content-2 .content-2{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .content-3 {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 450px) {
+    .section-content-2 .content-2 {
+        grid-template-columns: 1fr;
+    }
+}
+

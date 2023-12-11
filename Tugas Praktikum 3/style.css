@@ -1,0 +1,79 @@
+body {
+    background-color: rgba(128, 128, 128, 0.699);
+}
+
+.navbar {
+    z-index: 1000;
+}
+
+.navbar img {
+    width: auto;
+    height: 75px;
+}
+
+.nav-link {
+    text-transform: uppercase;
+    margin-right: 30px;
+    color: white ;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.nav-link:hover::after {
+    content: '';
+    display: block;
+    border-bottom: 3px solid #d6782c;
+    width: 50%;
+    margin: auto;
+    padding-bottom: 5px;
+    margin-bottom: -8px;
+}
+
+.jumbotron {
+    padding: 0;
+    margin-top: -100px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+    /* text-shadow: #000 20px; */
+}
+
+.background-jumbotron {
+    text-align: center;
+    background-image:url("6.jpg");
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+}
+
+.text-jumbotron h1 {
+    color: #d6782c;
+}
+
+.text-jumbotron {
+    color: white;
+}
+
+.card {
+    background-color: #d6782c;
+    margin: auto;
+}
+
+.gallery-h1 {
+    font-family: cursive;
+    font-size: 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+.image {
+    width: 100%;
+}
+
+.center-text {
+    text-align: center; /* Menengahkan teks secara horizontal */
+    margin-top: 10px; /* Atur margin atas sesuai kebutuhan Anda */
+}
+
+.full-width-footer {
+    background-color:#d6782c; /* Warna latar belakang footer */
+    color: black; /* Warna teks */
+}
