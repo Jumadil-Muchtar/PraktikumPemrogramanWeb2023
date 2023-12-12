@@ -1,0 +1,113 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.navbar {
+  background-color: orangered;
+  display: flex;
+  justify-content: center;
+  gap: 6%;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  padding: 20px;
+}
+
+.navbar a:hover {
+  background-color: white;
+  color: black;
+}
+
+.text {
+  padding: 12% 20% 1% 20%;
+  text-align: justify;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  padding: 6% 10% 6% 10%;
+}
+
+.image {
+  overflow: hidden;
+  /* position: relative; */
+}
+
+.image img {
+  max-width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.image:hover img {
+  transform: scale(1.1);
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 10px 0px 10px 0px;
+  display: flex;
+  justify-content: space-between;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 100%;
+}
+
+.logo {
+  padding: 0 0 0 5%;
+  font-size: 13px;
+}
+
+.logo-saja {
+  margin-left: 30%;
+}
+
+.contact {
+  margin-right: 5%;
+  font-size: 13px;
+  padding: 6px 0 0 0;
+}
+/* Untuk perangkat lebar maksimum 600px */
+@media screen and (max-width: 800px) {
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Untuk perangkat lebar maksimum 600px */
+@media screen and (max-width: 600px) {
+  .text {
+    padding: 15% 20% 1% 20%;
+  }
+
+  .image-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .logo {
+    padding: 0;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .logo-saja {
+    justify-content: center;
+    margin-right: 30%;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+
+  .contact {
+    text-align: center;
+    margin-left: 5%;
+    font-size: 13px;
+  }
+}

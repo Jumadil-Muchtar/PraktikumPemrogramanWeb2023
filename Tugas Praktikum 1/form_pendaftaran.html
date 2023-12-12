@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Formulir Pendaftaran</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div align="center">
+        <hr />
+        <h1>Formulir Pendaftaran UKM Rebahan</h1>
+        <hr />
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Form Pendaftaran -->
+    <form action="portofolio.html" method="POST">
+      <!-- Informasi Pribadi -->
+      <section>
+        <div>
+          <h2>Informasi Pribadi</h2>
+        </div>
+        <div>
+          <br />
+          <table cellpadding="3">
+            <tbody>
+              <tr>
+                <td><label for="nama">Nama</label></td>
+                <td>:</td>
+                <td><input type="text" id="nama" name="nama" required /></td>
+              </tr>
+              <tr>
+                <td><label for="email">Email</label></td>
+                <td>:</td>
+                <td><input type="email" id="email" name="email" required /></td>
+              </tr>
+              <tr>
+                <td><label for="telepon">Telepon</label></td>
+                <td>:</td>
+                <td><input type="tel" id="telepon" name="telepon" pattern="[0-9]{12,13}" placeholder="0812345678921" title="Format nomor telepon yang benar: 0812345678" /></td>
+              </tr>
+              <tr>
+                <td><label for="gender">Gender</label></td>
+                <td>:</td>
+                <td>
+                  <label for="male"><input type="radio" name="gender" id="male" /> Male</label>
+                  <label for="female"><input type="radio" name="gender" id="female" /> Female</label>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br />
+      </section>
+      <!-- End Informasi Pribadi -->
+
+      <hr />
+
+      <!-- Skills -->
+      <section>
+        <div>
+          <h2>Skills</h2>
+        </div>
+        <div>
+          <table cellpadding="3">
+            <tbody>
+              <tr>
+                <td><label for="skill1">Skill 1</label></td>
+                <td>:</td>
+                <td><input type="text" id="skill1" name="skill1" /></td>
+              </tr>
+              <tr>
+                <td><label for="skill2">Skill 2</label></td>
+                <td>:</td>
+                <td><input type="text" id="skill2" name="skill2" /></td>
+              </tr>
+              <tr>
+                <td><label for="skill3">Skill 3</label></td>
+                <td>:</td>
+                <td><input type="text" id="skill3" name="skill3" /></td>
+              </tr>
+              <tr>
+                <td><input type="button" value="+" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br />
+      </section>
+      <!-- End Skills -->
+
+      <hr />
+
+      <!-- Pengalaman -->
+      <section>
+        <div>
+          <h2>Pengalaman</h2>
+        </div>
+        <div>
+          <table cellpadding="3">
+            <tbody>
+              <tr>
+                <td><label for="pengalaman">Tuliskan pengalaman Anda</label></td>
+                <td>:</td>
+                <td><textarea id="pengalaman" name="pengalaman" rows="5" cols="50"></textarea></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br />
+      </section>
+      <!-- End Pengalaman -->
+
+      <hr />
+
+      <!-- Portofolio -->
+      <section>
+        <div>
+          <h2>Portofolio</h2>
+        </div>
+        <div>
+          <table cellpadding="3">
+            <tbody>
+              <tr>
+                <td><label for="portofolio">Link ke Portofolio Anda</label></td>
+                <td>:</td>
+                <td><input type="url" id="portofolio" name="portofolio" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <!-- End Portofolio -->
+
+      <!-- Button Daftar -->
+      <table>
+        <thead>
+          <tr>
+            <th><input type="submit" value="Daftar" /></th>
+            <th><input type="button" value="Kembali" onclick="location.href='portofolio.html'" /></th>
+          </tr>
+        </thead>
+      </table>
+      <!-- End Button Daftar -->
+      <br />
+      <hr />
+
+      <!-- Footer -->
+      <footer>
+        <div align="center">
+          <h2>UKM REBAHAN UNHAS</h2>
+        </div>
+        <hr />
+      </footer>
+      <!-- End Footer -->
+    </form>
+    <!-- End Form Pendaftaran -->
+  </body>
+</html>
