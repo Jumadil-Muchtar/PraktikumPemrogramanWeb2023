@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BLACKJACK GAME</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body >
+    <div class="main"> 
+    <h1>BLACKJACK</h1>
+    <h3>Play a Round?</h3>
+
+    <h3>Bot Cards:</h3>
+    <div class="bot-cards">
+      <img class="hidden-card" src="./images/cards/kartutertutup.png" alt="" />
+    </div>
+    <h3>Bot Sums: <span class="bot-sums"></span></h3>
+
+    <h3>Your Cards:</h3>
+    <div class="my-cards"></div>
+    <h3>Sums: <span class="my-sums"></span></h3>
+
+    <p id="result"></p>
+
+    <h3>Jumlah uang : Rp. <span id="my-money">10000</span></h3>
+
+    <h4>Jika menang : uang akan dikalikan sebanyak 5 dari uang taruhan </h4>
+    <h4>Jika kalah : akan berkurang sebanyak berapa taruhan nya</h4>
+    <br />
+    <input type="number" required/>
+    <br />
+    <br />
+
+    <button id="btn-start-game">START GAME</button>
+    <button id="btn-take">Take A Card</button>
+    <button id="btn-hold">Hold Card</button>
+
+    <script src="script.js"></script>
+  </div>
+  </body>
+</html>
